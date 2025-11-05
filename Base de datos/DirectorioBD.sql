@@ -47,8 +47,9 @@ CREATE TABLE categorias (
     nombre VARCHAR(100) NOT NULL UNIQUE,
     descripcion TEXT,
     icono VARCHAR(50),
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    visitas INT DEFAULT 0,
     activa BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
@@ -59,6 +60,7 @@ CREATE TABLE denominaciones (
     ID_Categoria INT,
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
+    visitas INT DEFAULT 0,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (ID_Categoria) REFERENCES categorias(ID_Categoria),
