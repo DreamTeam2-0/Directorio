@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Homepage\\ConectorBD",
-    "\\Homepage\\Logica",
-    "\\Homepage\\Modelos"
+    "\\Homepage"
   ],
-  "SelectedNode": "\\Homepage",
+  "SelectedNode": "\\Homepage\\Form1.cs",
   "PreviewInSolutionExplorer": true
 }

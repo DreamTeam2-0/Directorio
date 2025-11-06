@@ -1,0 +1,53 @@
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\bin\Debug\net8.0-windows\Perfil.exe
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\bin\Debug\net8.0-windows\Perfil.deps.json
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\bin\Debug\net8.0-windows\Perfil.runtimeconfig.json
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\bin\Debug\net8.0-windows\Perfil.dll
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\bin\Debug\net8.0-windows\Perfil.pdb
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.Form1.resources
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.csproj.GenerateResource.cache
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.AssemblyInfoInputs.cache
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.AssemblyInfo.cs
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.csproj.CoreCompileInputs.cache
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.dll
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\refint\Perfil.dll
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.pdb
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.genruntimeconfig.cache
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\ref\Perfil.dll
+C:\Users\fabia\OneDrive\Escritorio\II semestre\DS IV\Perfil\Perfil\obj\Debug\net8.0-windows\Perfil.Form2.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\bin\Debug\net8.0-windows\Perfil.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\bin\Debug\net8.0-windows\Perfil.deps.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\bin\Debug\net8.0-windows\Perfil.runtimeconfig.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\bin\Debug\net8.0-windows\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\bin\Debug\net8.0-windows\Perfil.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.Form1.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.Form2.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.csproj.GenerateResource.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.AssemblyInfoInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.AssemblyInfo.cs
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.sourcelink.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\refint\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\Perfil.genruntimeconfig.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\net8.0-windows\ref\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\bin\Debug\net8.0-windows\Perfil.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\bin\Debug\net8.0-windows\Perfil.deps.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\bin\Debug\net8.0-windows\Perfil.runtimeconfig.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\bin\Debug\net8.0-windows\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\bin\Debug\net8.0-windows\Perfil.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.Form1.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.Form2.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.csproj.GenerateResource.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.AssemblyInfoInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.AssemblyInfo.cs
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.sourcelink.json
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\refint\Perfil.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\Perfil.genruntimeconfig.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Tarjeta de Servicio\obj\Debug\net8.0-windows\ref\Perfil.dll

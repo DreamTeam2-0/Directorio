@@ -11,12 +11,16 @@ namespace Homepage
     public partial class Form1 : Form
     {
         private readonly CategoriaServicio categoriaServicio = new CategoriaServicio();
+        private bool panelLateralVisible = false;
 
         public Form1()
         {
             InitializeComponent();
             this.Load += Form1_Load;
             btnBuscar.Click += BtnBuscar_Click;
+
+            // Evento para cerrar el panel al hacer click fuera de él
+            this.Click += Form1_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -104,6 +108,62 @@ namespace Homepage
             catch (Exception ex)
             {
                 CrearBoton.MostrarError($"Error en la búsqueda: {ex.Message}");
+            }
+        }
+
+        // EVENTOS PARA EL PANEL LATERAL
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TogglePanelLateral();
+        }
+
+        private void TogglePanelLateral()
+        {
+            panelLateralVisible = !panelLateralVisible;
+            panelLateral.Visible = panelLateralVisible;
+
+            // Traer el panel al frente cuando está visible
+            if (panelLateralVisible)
+                panelLateral.BringToFront();
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            // Cerrar el panel si está abierto y se hace click fuera de él
+            if (panelLateralVisible && !panelLateral.Bounds.Contains(PointToClient(MousePosition)))
+            {
+                TogglePanelLateral();
+            }
+        }
+
+        private void btnVerPerfil_Click(object sender, EventArgs e)
+        {
+            // Cerrar el panel lateral
+            TogglePanelLateral();
+
+            // Abrir el formulario de perfil (lo crearás después)
+            AbrirFormularioPerfil();
+        }
+
+        private void AbrirFormularioPerfil()
+        {
+            try
+            {
+                // Aquí abrirás el formulario de perfil cuando lo crees
+                // Por ahora muestra un mensaje
+                MessageBox.Show("Formulario de perfil se abrirá aquí. Crea el formulario 'PerfilForm' para implementar esta funcionalidad.",
+                              "Funcionalidad Pendiente",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Information);
+
+                // Cuando crees el PerfilForm, descomenta esta línea:
+                // PerfilForm perfilForm = new PerfilForm();
+                // perfilForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el perfil: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
