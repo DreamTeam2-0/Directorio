@@ -1,6 +1,7 @@
 ﻿using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
+using Perfil.PerfilForm;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace Homepage
 
             // Evento para cerrar el panel al hacer click fuera de él
             this.Click += Form1_Click;
+
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -149,16 +152,9 @@ namespace Homepage
         {
             try
             {
-                // Aquí abrirás el formulario de perfil cuando lo crees
-                // Por ahora muestra un mensaje
-                MessageBox.Show("Formulario de perfil se abrirá aquí. Crea el formulario 'PerfilForm' para implementar esta funcionalidad.",
-                              "Funcionalidad Pendiente",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Information);
-
-                // Cuando crees el PerfilForm, descomenta esta línea:
-                // PerfilForm perfilForm = new PerfilForm();
-                // perfilForm.ShowDialog();
+                
+                PerfilForm perfilForm = new PerfilForm();
+                perfilForm.ShowDialog();
             }
             catch (Exception ex)
             {

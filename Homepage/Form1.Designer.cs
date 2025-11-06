@@ -137,7 +137,7 @@
             this.lblCategorias.Text = "Categorías";
             // 
             // panelLateral
-            // 
+            //
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(76, 175, 80);
             this.panelLateral.Controls.Add(this.btnCerrarSesion);
             this.panelLateral.Controls.Add(this.btnCambiarEmprendedor);
@@ -149,39 +149,39 @@
             this.panelLateral.Size = new System.Drawing.Size(300, 616);
             this.panelLateral.TabIndex = 8;
             this.panelLateral.Visible = false;
-            // 
-            // btnCerrarSesion
-            // 
+            //
+            // btnCerrarSesion - ESQUINA INFERIOR DERECHA
+            //
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 40, 40);
             this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(20, 20, 20);
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 280);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(150, 550);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(300, 50);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(140, 40);
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            // 
+            //
             // btnCambiarEmprendedor
-            // 
-            this.btnCambiarEmprendedor.BackColor = System.Drawing.Color.Transparent;
-            this.btnCambiarEmprendedor.FlatAppearance.BorderSize = 0;
+
+            this.btnCambiarEmprendedor.BackColor = System.Drawing.Color.FromArgb(45, 125, 49);
+            this.btnCambiarEmprendedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(45, 125, 49);
+            this.btnCambiarEmprendedor.FlatAppearance.BorderSize = 2;
             this.btnCambiarEmprendedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 40, 40);
             this.btnCambiarEmprendedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(20, 20, 20);
             this.btnCambiarEmprendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarEmprendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarEmprendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnCambiarEmprendedor.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarEmprendedor.Location = new System.Drawing.Point(0, 230);
+            this.btnCambiarEmprendedor.Location = new System.Drawing.Point(50, 300);
             this.btnCambiarEmprendedor.Name = "btnCambiarEmprendedor";
-            this.btnCambiarEmprendedor.Size = new System.Drawing.Size(300, 50);
+            this.btnCambiarEmprendedor.Size = new System.Drawing.Size(200, 60);
             this.btnCambiarEmprendedor.TabIndex = 3;
-            this.btnCambiarEmprendedor.Text = "Cambiar a emprendedor";
-            this.btnCambiarEmprendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambiarEmprendedor.Text = "Cambiar a Prestador de Servicios";
             this.btnCambiarEmprendedor.UseVisualStyleBackColor = false;
             // 
             // btnConfiguraciones
