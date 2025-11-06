@@ -12,15 +12,15 @@ INSERT INTO usuarios_sistema (username, email, password_hash, ID_Rol, nombres, a
 ('user1', 'user1@directorio.com', 'user1', 2, 'user', 'A1', '+1234567890');
 
 -- Insertar categorías básicas de servicios
-INSERT INTO categorias (nombre, descripcion, icono) VALUES 
-('Transporte', 'Servicios de transporte de personas y carga', 'car'),
-('Jardinería', 'Cuidado y mantenimiento de jardines', 'tree'),
-('Albañilería', 'Construcción y reparaciones estructurales', 'hammer'),
-('Electricidad', 'Instalación y reparación eléctrica', 'bolt'),
-('Plomería', 'Reparación e instalación de tuberías', 'droplet'),
-('Limpieza', 'Servicios de limpieza residencial y comercial', 'home'),
-('Carpintería', 'Trabajos en madera y muebles', 'package'),
-('Tecnología', 'Reparación y soporte técnico', 'monitor');
+INSERT INTO categorias (nombre, descripcion, icono, color) VALUES 
+('Transporte', 'Servicios de transporte de personas y carga', 'car', '#FF6B35'),
+('Jardinería', 'Cuidado y mantenimiento de jardines', 'tree', '#4CB963'),
+('Albañilería', 'Construcción y reparaciones estructurales', 'hammer', '#8B4513'),
+('Electricidad', 'Instalación y reparación eléctrica', 'bolt', '#FFD700'),
+('Plomería', 'Reparación e instalación de tuberías', 'droplet', '#1E90FF'),
+('Limpieza', 'Servicios de limpieza residencial y comercial', 'home', '#32CD32'),
+('Carpintería', 'Trabajos en madera y muebles', 'package', '#8B4513'),
+('Tecnología', 'Reparación y soporte técnico', 'monitor', '#4169E1');
 
 -- Insertar denominaciones de ejemplo para las categorías
 INSERT INTO denominaciones (ID_Categoria, nombre, descripcion) VALUES 
