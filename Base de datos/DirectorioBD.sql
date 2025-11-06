@@ -47,6 +47,7 @@ CREATE TABLE categorias (
     nombre VARCHAR(100) NOT NULL UNIQUE,
     descripcion TEXT,
     icono VARCHAR(50),
+    color VARCHAR(7),
     visitas INT DEFAULT 0,
     activa BOOLEAN DEFAULT TRUE,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -136,4 +137,3 @@ CREATE TABLE acciones_sistema (
     fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (ID_Usuario_Sistema) REFERENCES usuarios_sistema(ID_Usuario_Sistema)
 );
-
