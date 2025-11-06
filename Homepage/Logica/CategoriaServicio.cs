@@ -1,4 +1,5 @@
 using Homepage.Modelos;
+using Homepage.ConectorBD;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Homepage.Logica
         {
             try
             {
-                using (var db = new DatabaseConnection())
+                using (var db = new BDConector())
                 {
                     db.Open();
 
@@ -31,18 +32,22 @@ namespace Homepage.Logica
 
                         while (reader.Read())
                         {
+                            // Leer los valores de forma segura
+                            int id = reader.GetInt32("ID_Categoria");
+                            string nombre = reader.GetString("nombre");
+                            string colorHex = reader["color"] == DBNull.Value ? "#CCCCCC" : reader["color"].ToString();
+
                             var categoria = new Categoria
                             {
-                                Id = reader.GetInt32("ID_Categoria"),
-                                Nombre = reader.GetString("nombre"),
-                                ColorFondo = ColorFromString(reader.IsDBNull("color") ? "" : reader.GetString("color"))
+                                Id = id,
+                                Nombre = nombre,
+                                ColorFondo = ColorFromString(colorHex)
                             };
                             _categorias.Add(categoria);
                         }
                     }
                 }
 
-                // Si no se cargaron categorías, usar datos mock como respaldo
                 if (_categorias.Count == 0)
                 {
                     CargarDatosMock();
@@ -50,21 +55,21 @@ namespace Homepage.Logica
             }
             catch (Exception ex)
             {
-                // Si hay error con la BD, cargar datos mock
                 System.Diagnostics.Debug.WriteLine($"Error cargando categorías desde BD: {ex.Message}");
                 CargarDatosMock();
             }
         }
 
+
         private void CargarDatosMock()
         {
             _categorias = new List<Categoria>
             {
-                new Categoria { Id = 1, Nombre = "Vehículos",   ColorFondo = Color.FromArgb(244, 67, 54) },
-                new Categoria { Id = 2, Nombre = "Comida",      ColorFondo = Color.LimeGreen },
-                new Categoria { Id = 3, Nombre = "Ferretería",  ColorFondo = Color.SkyBlue },
+                new Categoria { Id = 1, Nombre = "Vehículos",   ColorFondo = Color.Red },
+                new Categoria { Id = 2, Nombre = "Comida",      ColorFondo = Color.Green },
+                new Categoria { Id = 3, Nombre = "Ferretería",  ColorFondo = Color.Blue },
                 new Categoria { Id = 4, Nombre = "Limpieza",    ColorFondo = Color.Orange },
-                new Categoria { Id = 5, Nombre = "Ropa",        ColorFondo = Color.MediumPurple },
+                new Categoria { Id = 5, Nombre = "Ropa",        ColorFondo = Color.Purple },
                 new Categoria { Id = 6, Nombre = "Juguetes",    ColorFondo = Color.Coral }
             };
         }

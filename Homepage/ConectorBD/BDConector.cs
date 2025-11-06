@@ -2,15 +2,16 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
-namespace Homepage.Logica
+namespace Homepage.ConectorBD
 {
-    public class DatabaseConnection : IDisposable
+    public class BDConector : IDisposable
     {
         private MySqlConnection _connection;
+        private const string ConnectionString = "Server=localhost;Database=directorio_servicios;Uid=root;Pwd=Shadow27#;Port=3306;";
 
-        public DatabaseConnection()
+        public BDConector()
         {
-            _connection = new MySqlConnection(DatabaseConfig.ConnectionString);
+            _connection = new MySqlConnection(ConnectionString);
         }
 
         public void Open()

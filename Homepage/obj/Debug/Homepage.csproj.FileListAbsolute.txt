@@ -1,0 +1,16 @@
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\Homepage.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\Homepage.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\Homepage.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\MySql.Data.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\System.Memory.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\bin\Debug\MySql.Data.xml
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.Form1.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.Properties.Resources.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.GenerateResource.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.Up2Date
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.pdb
