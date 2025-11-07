@@ -95,14 +95,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DBHelp\DatabaseHelper.cs" />
+	<Compile Include="PassHelp\PasswordHelper.cs" />
+	<Compile Include="RegistroForm.cs" />
     <Compile Include="LoginDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginDirectory.Designer.cs">
       <DependentUpon>LoginDirectory.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="RegistroForm.Designer.cs">
+		<DependentUpon>RegistroForm.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -132,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+	  <ProjectReference Include="..\Homepage\Homepage.csproj" />
+	  <Compile Include="..\DataBase\UserSession.cs" />
+	  <ProjectReference Include="..\DataBase\DataBase.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

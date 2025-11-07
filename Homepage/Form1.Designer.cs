@@ -153,7 +153,7 @@ namespace Homepage
             this.panelLateral.TabIndex = 8;
             this.panelLateral.Visible = false;
             //
-            // btnCerrarSesion - ESQUINA INFERIOR DERECHA
+            // btnCerrarSesion
             //
             this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
@@ -169,6 +169,7 @@ namespace Homepage
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             //
             // btnCambiarEmprendedor
 
@@ -234,8 +235,7 @@ namespace Homepage
             this.lblMenuTitulo.Text = "Menú";
             // 
             // Form1
-            // 
-           
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 645);

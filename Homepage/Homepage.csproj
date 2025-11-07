@@ -55,7 +55,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-	<Compile Include="ConectorBD\BDConector.cs" />
     <Compile Include="Logica\CategoriaServicio.cs" />
     <Compile Include="Modelos\Categoria.cs" />
     <Compile Include="Program.cs" />
@@ -86,7 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-	  <ProjectReference Include="..\Perfil\Perfil.csproj" />
+	<ProjectReference Include="..\Perfil\Perfil.csproj" />
+	<ProjectReference Include="..\DataBase\DataBase.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BD\" />

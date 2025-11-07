@@ -40,3 +40,25 @@ C:\Users\angel\source\repos\LoginDirectorio\LoginDirectorio\obj\Debug\LoginDir.5
 C:\Users\angel\source\repos\LoginDirectorio\LoginDirectorio\obj\Debug\LoginDirectorio.exe
 C:\Users\angel\source\repos\LoginDirectorio\LoginDirectorio\obj\Debug\LoginDirectorio.pdb
 C:\Users\angel\source\repos\LoginDirectorio\LoginDirectorio\obj\Debug\LoginDirectorio.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\LoginDirectorio.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\LoginDirectorio.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\LoginDirectorio.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\DataBase.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Homepage.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\System.Memory.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Perfil.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Homepage.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Homepage.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\DataBase.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\DataBase.dll.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Perfil.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\bin\Debug\Perfil.exe.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.LoginDirectory.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.Properties.Resources.resources
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.csproj.GenerateResource.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDir.5FC4A9AD.Up2Date
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.exe
+C:\Users\ROG STRIX\Source\Repos\Directorio\Login\obj\Debug\LoginDirectorio.pdb

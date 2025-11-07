@@ -1,6 +1,7 @@
 ﻿using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
+using Shared.Session;
 using Perfil;
 using System;
 using System.Drawing;
@@ -28,6 +29,17 @@ namespace Homepage
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // VERIFICAR SI HAY SESIÓN ACTIVA
+            if (!UserSession.SesionActiva)
+            {
+                MessageBox.Show("No hay sesión activa. Será redirigido al login.", "Sesión Expirada",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
+            lblBienvenida.Text = $"Bienvenido, {UserSession.Username}";
+
             ConfigurarBuscador();
             CargarCategorias();
         }
@@ -147,6 +159,30 @@ namespace Homepage
             // Abrir el formulario de perfil (lo crearás después)
             AbrirFormularioPerfil();
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?",
+                                          "Cerrar Sesión",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                UserSession.CerrarSesion();
+                this.Close();
+            }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            if (UserSession.SesionActiva)
+            {
+                this.Text = $"Directorio de Servicios - {UserSession.NombreCompleto} ({UserSession.Rol})";
+            }
+        }
+
 
         private void AbrirFormularioPerfil()
         {

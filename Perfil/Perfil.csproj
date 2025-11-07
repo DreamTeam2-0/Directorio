@@ -95,7 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConectorBD\BDConector.cs" />
     <Compile Include="Logica\PerfilServicio.cs" />
     <Compile Include="Modelos\PerfilUsuario.cs" />
     <Compile Include="PerfilForm.cs">
@@ -131,6 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+	  <Compile Include="..\DataBase\UserSession.cs" />
+	  <ProjectReference Include="..\DataBase\DataBase.csproj" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

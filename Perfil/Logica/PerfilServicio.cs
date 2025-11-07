@@ -1,7 +1,8 @@
 ﻿using Perfil.Modelos;
-using Perfil.ConectorBD;
+using DataBase;
 using MySql.Data.MySqlClient;
 using System;
+using Shared.Session;
 
 namespace Perfil.Logica
 {
@@ -9,13 +10,18 @@ namespace Perfil.Logica
     {
         public PerfilUsuario ObtenerPerfil()
         {
+            if (!UserSession.SesionActiva)
+            {
+                System.Diagnostics.Debug.WriteLine("No hay sesión activa");
+                return null;
+            }
+
             try
             {
                 using (var db = new BDConector())
                 {
                     db.Open();
 
-                    // NOTA: Reemplaza '1' con el ID del usuario logueado cuando implementes autenticación
                     string query = @"
                         SELECT 
                             du.nombres, 
@@ -27,10 +33,10 @@ namespace Perfil.Logica
                             du.whatsapp, 
                             du.otro_contacto 
                         FROM datos_usuario du 
-                        WHERE du.ID_Usuario = 1 
+                        WHERE du.ID_Usuario = @idUsuario 
                         LIMIT 1";
 
-                    using (var reader = db.ExecuteReader(query))
+                    using (var reader = db.ExecuteReader(query, new MySqlParameter("@idUsuario", UserSession.IdUsuario)))
                     {
                         if (reader.Read())
                         {
@@ -39,17 +45,17 @@ namespace Perfil.Logica
                                 Nombres = reader["nombres"].ToString(),
                                 Apellidos = reader["apellidos"].ToString(),
                                 Ciudad = reader["ciudad"].ToString(),
-                                DireccionAproximada = reader["direccion_aproximada"].ToString(),
+                                DireccionAproximada = reader["direccion_aproximada"]?.ToString() ?? "",
                                 Email = reader["email"].ToString(),
                                 Telefono = reader["telefono"].ToString(),
-                                Whatsapp = reader["whatsapp"].ToString(),
-                                OtroContacto = reader["otro_contacto"].ToString()
+                                Whatsapp = reader["whatsapp"]?.ToString() ?? "",
+                                OtroContacto = reader["otro_contacto"]?.ToString() ?? ""
                             };
                         }
                     }
                 }
 
-                return null; // No se encontraron datos
+                return null;
             }
             catch (Exception ex)
             {

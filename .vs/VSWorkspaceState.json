@@ -1,24 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+    "\\DataBase",
     "\\Homepage",
+    "\\Homepage\\Logica",
+    "\\Login",
+    "\\Login\\DBHelp",
     "\\Perfil",
-    "\\Perfil\\ConectorBD",
     "\\Perfil\\Logica",
     "\\Perfil\\Modelos"
   ],
-  "SelectedNode": "\\Homepage\\Form1.cs",
+  "SelectedNode": "\\Login\\LoginDirectory.cs",
   "PreviewInSolutionExplorer": false
-=======
-    "\\Perfil"
-  ],
-=======
-    "\\Perfil"
-  ],
->>>>>>> Stashed changes
-  "SelectedNode": "\\Homepage",
-  "PreviewInSolutionExplorer": true
->>>>>>> Stashed changes
 }

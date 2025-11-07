@@ -1,0 +1,12 @@
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\DataBase.dll.config
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\DataBase.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\DataBase.pdb
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\MySql.Data.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\System.Memory.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\bin\Debug\MySql.Data.xml
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\obj\Debug\DataBase.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\obj\Debug\DataBase.csproj.Up2Date
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\obj\Debug\DataBase.dll
+C:\Users\ROG STRIX\Source\Repos\Directorio\DataBase\obj\Debug\DataBase.pdb

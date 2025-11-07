@@ -1,62 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\",
+  "WorkspaceRootPath": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\PerfilForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\ConectorBD\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\ConectorBD\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\LoginDirectorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Logica\\PerfilServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\Logica\\PerfilServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Modelos\\PerfilUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\Modelos\\PerfilUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-=======
->>>>>>> Stashed changes
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Perfil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\Perfil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Logica\\CategoriaServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Modelos\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Modelos\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\DBHelp\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\ConectorBD\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\ConectorBD\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\Source\\Repos\\Directorio\\DataBase\\UserSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataBase\\UserSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Homepage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Homepage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Homepage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
->>>>>>> Stashed changes
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,36 +54,9 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 13,
           "Children": [
             {
-<<<<<<< Updated upstream
-=======
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\App.config",
-              "RelativeDocumentMoniker": "Homepage\\App.config",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\App.config",
-              "RelativeToolTip": "Homepage\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-11-06T02:16:56.217Z",
-              "IsPinned": true
-<<<<<<< Updated upstream
-=======
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
->>>>>>> Stashed changes
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
->>>>>>> Stashed changes
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
@@ -112,183 +73,147 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\Source\\Repos\\Directorio\\DataBase\\UserSession.cs",
+              "RelativeDocumentMoniker": "DataBase\\UserSession.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\Source\\Repos\\Directorio\\DataBase\\UserSession.cs",
+              "RelativeToolTip": "DataBase\\UserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T21:39:48.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginDirectorio.csproj",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectorio.csproj",
+              "RelativeDocumentMoniker": "Login\\LoginDirectorio.csproj",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectorio.csproj",
+              "RelativeToolTip": "Login\\LoginDirectorio.csproj",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-07T21:33:32.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PerfilServicio.cs",
               "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Logica\\PerfilServicio.cs",
               "RelativeDocumentMoniker": "Perfil\\Logica\\PerfilServicio.cs",
               "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Logica\\PerfilServicio.cs",
               "RelativeToolTip": "Perfil\\Logica\\PerfilServicio.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAQwDwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACYAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T00:26:31.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PerfilUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Modelos\\PerfilUsuario.cs",
-              "RelativeDocumentMoniker": "Perfil\\Modelos\\PerfilUsuario.cs",
-              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Modelos\\PerfilUsuario.cs",
-              "RelativeToolTip": "Perfil\\Modelos\\PerfilUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T00:26:05.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PerfilForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.Designer.cs",
-              "RelativeDocumentMoniker": "Perfil\\PerfilForm.Designer.cs",
-              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.Designer.cs",
-              "RelativeToolTip": "Perfil\\PerfilForm.Designer.cs",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAgwBwBAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T00:22:40.539Z",
+              "WhenOpened": "2025-11-07T20:11:27.664Z",
               "EditorCaption": ""
-=======
-=======
->>>>>>> Stashed changes
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Homepage.csproj",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Homepage.csproj",
-              "RelativeDocumentMoniker": "Homepage\\Homepage.csproj",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Homepage.csproj",
-              "RelativeToolTip": "Homepage\\Homepage.csproj",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T02:12:09.323Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BDConector.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\ConectorBD\\BDConector.cs",
-              "RelativeDocumentMoniker": "Homepage\\ConectorBD\\BDConector.cs",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\ConectorBD\\BDConector.cs",
-              "RelativeToolTip": "Homepage\\ConectorBD\\BDConector.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAADwv0AAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T01:47:13.618Z"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "Title": "PerfilForm.cs",
-              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs",
-              "RelativeDocumentMoniker": "Perfil\\PerfilForm.cs",
-              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs",
-              "RelativeToolTip": "Perfil\\PerfilForm.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAgwFIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T23:58:17.196Z",
-              "EditorCaption": ""
-=======
-=======
->>>>>>> Stashed changes
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Modelos\\Categoria.cs",
-              "RelativeDocumentMoniker": "Homepage\\Modelos\\Categoria.cs",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Modelos\\Categoria.cs",
-              "RelativeToolTip": "Homepage\\Modelos\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T00:48:59.781Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoriaServicio.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs",
-              "RelativeDocumentMoniker": "Homepage\\Logica\\CategoriaServicio.cs",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs",
-              "RelativeToolTip": "Homepage\\Logica\\CategoriaServicio.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwvyUAAAB3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T00:48:43.142Z"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "BDConector.cs",
-              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\ConectorBD\\BDConector.cs",
-              "RelativeDocumentMoniker": "Perfil\\ConectorBD\\BDConector.cs",
-              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\ConectorBD\\BDConector.cs",
-              "RelativeToolTip": "Perfil\\ConectorBD\\BDConector.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAQwDQAAAAJAAAAAAAAAA==",
+              "Title": "CategoriaServicio.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs",
+              "RelativeDocumentMoniker": "Homepage\\Logica\\CategoriaServicio.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs",
+              "RelativeToolTip": "Homepage\\Logica\\CategoriaServicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T00:27:14.279Z"
+              "WhenOpened": "2025-11-07T21:25:28.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Program.cs",
               "RelativeDocumentMoniker": "Homepage\\Program.cs",
               "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Program.cs",
               "RelativeToolTip": "Homepage\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T00:00:05.932Z"
+              "WhenOpened": "2025-11-07T21:19:38.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Login\\DBHelp\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs",
+              "RelativeToolTip": "Login\\DBHelp\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T21:11:27.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Homepage\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.Designer.cs",
-              "RelativeToolTip": "Homepage\\Form1.Designer.cs",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAAAPAAAAA6AAAAAAAAAA==",
+              "Title": "Perfil.csproj",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Perfil.csproj",
+              "RelativeDocumentMoniker": "Perfil\\Perfil.csproj",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\Perfil.csproj",
+              "RelativeToolTip": "Perfil\\Perfil.csproj",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-07T21:03:21.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PerfilForm.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs",
+              "RelativeDocumentMoniker": "Perfil\\PerfilForm.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Perfil\\PerfilForm.cs",
+              "RelativeToolTip": "Perfil\\PerfilForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T23:59:44.632Z"
-=======
->>>>>>> Stashed changes
+              "WhenOpened": "2025-11-07T20:20:05.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Homepage.csproj",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Homepage.csproj",
+              "RelativeDocumentMoniker": "Homepage\\Homepage.csproj",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Homepage.csproj",
+              "RelativeToolTip": "Homepage\\Homepage.csproj",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-07T20:07:13.355Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Form1.cs",
-              "RelativeDocumentMoniker": "Homepage\\Form1.cs",
-              "ToolTip": "C:\\Users\\angel\\source\\repos\\DreamTeam2-0\\Directorio\\Homepage\\Form1.cs",
-              "RelativeToolTip": "Homepage\\Form1.cs",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "ViewState": "AgIAAIcAAAAAAAAAAAAkwIkAAAAlAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
->>>>>>> Stashed changes
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
->>>>>>> Stashed changes
+              "Title": "LoginDirectory.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectory.cs",
+              "RelativeDocumentMoniker": "Login\\LoginDirectory.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Login\\LoginDirectory.cs",
+              "RelativeToolTip": "Login\\LoginDirectory.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T23:52:31.207Z",
+              "WhenOpened": "2025-11-07T19:12:02.569Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.cs",
+              "RelativeDocumentMoniker": "Homepage\\Form1.cs",
+              "ToolTip": "C:\\Users\\ROG STRIX\\source\\repos\\Directorio\\Homepage\\Form1.cs",
+              "RelativeToolTip": "Homepage\\Form1.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T19:03:57.23Z",
+              "EditorCaption": ""
             }
           ]
         }
