@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "\\Homepage",
     "\\Perfil",
     "\\Perfil\\ConectorBD",
@@ -13,6 +14,10 @@
 =======
     "\\Perfil"
   ],
+=======
+    "\\Perfil"
+  ],
+>>>>>>> Stashed changes
   "SelectedNode": "\\Homepage",
   "PreviewInSolutionExplorer": true
 >>>>>>> Stashed changes
