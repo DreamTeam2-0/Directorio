@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< Updated upstream
     "\\Homepage",
     "\\Perfil",
     "\\Perfil\\ConectorBD",
@@ -9,4 +10,10 @@
   ],
   "SelectedNode": "\\Homepage\\Form1.cs",
   "PreviewInSolutionExplorer": false
+=======
+    "\\Perfil"
+  ],
+  "SelectedNode": "\\Homepage",
+  "PreviewInSolutionExplorer": true
+>>>>>>> Stashed changes
 }
