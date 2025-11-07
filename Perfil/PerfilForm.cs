@@ -1,4 +1,4 @@
-using Perfil.Modelos;
+Ôªøusing Perfil.Modelos;
 using Perfil.Logica;
 using System;
 using System.Windows.Forms;
@@ -66,11 +66,20 @@ namespace Perfil
 
         private void btnEditarDatos_Click(object sender, EventArgs e)
         {
-            // AquÌ implementar·s la ediciÛn de datos
-            MessageBox.Show("Funcionalidad de ediciÛn se implementar· aquÌ",
+            // Aqu√≠ implementar√°s la edici√≥n de datos
+            MessageBox.Show("Funcionalidad de edici√≥n se implementar√° aqu√≠",
                           "Editar Datos",
                           MessageBoxButtons.OK,
                           MessageBoxIcon.Information);
+        }
+
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            // Cerrar este formulario (PerfilForm)
+            this.Close();
+
+            // Form1 se mostrar√° autom√°ticamente gracias al evento FormClosed que configuramos
         }
     }
 }

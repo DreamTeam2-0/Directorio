@@ -1,4 +1,7 @@
-﻿namespace Perfil
+﻿using System;
+using System.Windows.Forms;
+
+namespace Perfil
 {
     partial class PerfilForm
     {
@@ -24,6 +27,7 @@
         private System.Windows.Forms.Label lblNombres;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.Button btnEditarDatos;
+        private System.Windows.Forms.Button btnVolverMenu;
 
         protected override void Dispose(bool disposing)
         {
@@ -57,6 +61,7 @@
             this.lblNombres = new System.Windows.Forms.Label();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.btnEditarDatos = new System.Windows.Forms.Button();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -275,7 +280,7 @@
             this.btnEditarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnEditarDatos.ForeColor = System.Drawing.Color.White;
-            this.btnEditarDatos.Location = new System.Drawing.Point(220, 480);
+            this.btnEditarDatos.Location = new System.Drawing.Point(40, 480);
             this.btnEditarDatos.Name = "btnEditarDatos";
             this.btnEditarDatos.Size = new System.Drawing.Size(160, 40);
             this.btnEditarDatos.TabIndex = 3;
@@ -283,12 +288,29 @@
             this.btnEditarDatos.UseVisualStyleBackColor = false;
             this.btnEditarDatos.Click += new System.EventHandler(this.btnEditarDatos_Click);
             // 
+            // btnVolverMenu
+            // 
+            this.btnVolverMenu.BackColor = System.Drawing.Color.FromArgb(192, 192, 192);
+            this.btnVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolverMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVolverMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnVolverMenu.Location = new System.Drawing.Point(400, 480);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(160, 40);
+            this.btnVolverMenu.TabIndex = 4;
+            this.btnVolverMenu.Text = "Volver al Menú";
+            this.btnVolverMenu.UseVisualStyleBackColor = false;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
+            // 
             // PerfilForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.AutoSize;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.ClientSize = new System.Drawing.Size(600, 540);
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Controls.Add(this.btnEditarDatos);
+            this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.panelDatosPersonales);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelHeader);

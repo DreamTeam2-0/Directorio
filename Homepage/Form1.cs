@@ -1,7 +1,7 @@
 ﻿using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
-using Perfil.PerfilForm;
+using Perfil;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -152,9 +152,10 @@ namespace Homepage
         {
             try
             {
-                
                 PerfilForm perfilForm = new PerfilForm();
-                perfilForm.ShowDialog();
+                perfilForm.FormClosed += (s, args) => this.Show(); // Mostrar Form1 cuando se cierre PerfilForm
+                this.Hide(); // Ocultar Form1
+                perfilForm.Show(); // Mostrar PerfilForm como formulario no modal
             }
             catch (Exception ex)
             {

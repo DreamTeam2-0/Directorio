@@ -3,8 +3,10 @@
     "",
     "\\Homepage",
     "\\Perfil",
-    "\\Perfil\\ConectorBD"
+    "\\Perfil\\ConectorBD",
+    "\\Perfil\\Logica",
+    "\\Perfil\\Modelos"
   ],
-  "SelectedNode": "\\Homepage\\Logica",
+  "SelectedNode": "\\Homepage\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

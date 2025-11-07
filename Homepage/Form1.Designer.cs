@@ -1,4 +1,7 @@
-﻿namespace Homepage
+﻿using System;
+using System.Windows.Forms;
+
+namespace Homepage
 {
     partial class Form1
     {
@@ -232,9 +235,11 @@
             // 
             // Form1
             // 
+           
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1466, 645);
+            this.ClientSize = new System.Drawing.Size(1040, 645);
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Controls.Add(this.panelLateral);
             this.Controls.Add(this.lblCategorias);
             this.Controls.Add(this.tlpSolicitados);
