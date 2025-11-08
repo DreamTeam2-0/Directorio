@@ -1,0 +1,3 @@
+C:\Users\fabia\source\repos\DreamTeam2-0\Directorio\Homepage\obj\Debug\Homepage.csproj.AssemblyReference.cache
+C:\Users\fabia\source\repos\DreamTeam2-0\Directorio\Homepage\obj\Debug\Homepage.Form1.resources
+C:\Users\fabia\source\repos\DreamTeam2-0\Directorio\Homepage\obj\Debug\Homepage.csproj.GenerateResource.cache

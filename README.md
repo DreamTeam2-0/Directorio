@@ -1,2 +1,0 @@
-# Directorio
-Proyecto DS4
