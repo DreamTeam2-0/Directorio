@@ -7,7 +7,7 @@ namespace DataBase
     public class BDConector : IDisposable
     {
         private MySqlConnection _connection;
-        private const string ConnectionString = "Server=localhost;Database=directorio_servicios;Uid=root;Pwd=Shadow27#;Port=3306;";
+        private const string ConnectionString = "Server=localhost;Database=directorio_servicios;Uid=root;Pwd=J1234b;Port=3306;";
 
         public BDConector()
         {

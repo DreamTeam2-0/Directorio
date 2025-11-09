@@ -53,3 +53,18 @@ C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\Perfil.csproj.CoreCo
 C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\Perfil.csproj.Up2Date
 C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\Perfil.exe
 C:\Users\ROG STRIX\Source\Repos\Directorio\Perfil\obj\Debug\Perfil.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\Perfil.exe.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\Perfil.exe
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\Perfil.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\DataBase.dll
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\DataBase.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\bin\Debug\DataBase.dll.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.csproj.AssemblyReference.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.exe.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.PerfilForm.resources
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.Properties.Resources.resources
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.csproj.GenerateResource.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.csproj.CoreCompileInputs.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.csproj.Up2Date
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.exe
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Perfil\obj\Debug\Perfil.pdb

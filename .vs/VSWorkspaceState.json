@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DataBase",
     "\\Homepage",
     "\\Homepage\\Logica",
+    "\\Homepage\\Modelos",
+    "\\Homepage\\UI",
     "\\Login",
     "\\Login\\DBHelp",
     "\\Perfil",
     "\\Perfil\\Logica",
     "\\Perfil\\Modelos"
   ],
+  "SelectedNode": "\\Homepage\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

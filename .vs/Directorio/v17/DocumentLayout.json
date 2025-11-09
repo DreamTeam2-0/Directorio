@@ -3,48 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\LoginDirectorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Logica\\PerfilServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\Logica\\PerfilServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Perfil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\Perfil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataBase\\BDConector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\LoginDirectory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Modelos\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Modelos\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\UI\\CrearBoton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\UI\\CrearBoton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Logica\\CategoriaServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Login\\DBHelp\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\UserSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataBase\\UserSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Perfil\\PerfilForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Homepage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Homepage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Homepage\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,39 +58,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserSession.cs",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\UserSession.cs",
-              "RelativeDocumentMoniker": "DataBase\\UserSession.cs",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\UserSession.cs",
-              "RelativeToolTip": "DataBase\\UserSession.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Modelos\\Categoria.cs",
+              "RelativeDocumentMoniker": "Homepage\\Modelos\\Categoria.cs",
+              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Modelos\\Categoria.cs",
+              "RelativeToolTip": "Homepage\\Modelos\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T21:39:48.153Z"
+              "WhenOpened": "2025-11-08T00:36:07.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CrearBoton.cs",
+              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\UI\\CrearBoton.cs",
+              "RelativeDocumentMoniker": "Homepage\\UI\\CrearBoton.cs",
+              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\UI\\CrearBoton.cs",
+              "RelativeToolTip": "Homepage\\UI\\CrearBoton.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T00:34:17.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginDirectorio.csproj",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectorio.csproj",
-              "RelativeDocumentMoniker": "Login\\LoginDirectorio.csproj",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectorio.csproj",
-              "RelativeToolTip": "Login\\LoginDirectorio.csproj",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIoAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-07T21:33:32.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PerfilServicio.cs",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Logica\\PerfilServicio.cs",
-              "RelativeDocumentMoniker": "Perfil\\Logica\\PerfilServicio.cs",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Logica\\PerfilServicio.cs",
-              "RelativeToolTip": "Perfil\\Logica\\PerfilServicio.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACYAAABlAAAAAAAAAA==",
+              "Title": "BDConector.cs",
+              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\BDConector.cs",
+              "RelativeDocumentMoniker": "DataBase\\BDConector.cs",
+              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\DataBase\\BDConector.cs",
+              "RelativeToolTip": "DataBase\\BDConector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T20:11:27.664Z"
+              "WhenOpened": "2025-11-08T00:16:16.676Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -120,94 +103,36 @@
               "RelativeDocumentMoniker": "Homepage\\Logica\\CategoriaServicio.cs",
               "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Logica\\CategoriaServicio.cs",
               "RelativeToolTip": "Homepage\\Logica\\CategoriaServicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T21:25:28.964Z"
+              "WhenOpened": "2025-11-07T21:25:28.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Program.cs",
-              "RelativeDocumentMoniker": "Homepage\\Program.cs",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Program.cs",
-              "RelativeToolTip": "Homepage\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T21:19:38.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Login\\DBHelp\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\DBHelp\\DatabaseHelper.cs",
-              "RelativeToolTip": "Login\\DBHelp\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T21:11:27.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Perfil.csproj",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Perfil.csproj",
-              "RelativeDocumentMoniker": "Perfil\\Perfil.csproj",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\Perfil.csproj",
-              "RelativeToolTip": "Perfil\\Perfil.csproj",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIQAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-07T21:03:21.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PerfilForm.cs",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\PerfilForm.cs",
-              "RelativeDocumentMoniker": "Perfil\\PerfilForm.cs",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Perfil\\PerfilForm.cs",
-              "RelativeToolTip": "Perfil\\PerfilForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T20:20:05.653Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Homepage.csproj",
-              "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Homepage.csproj",
-              "RelativeDocumentMoniker": "Homepage\\Homepage.csproj",
-              "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Homepage.csproj",
-              "RelativeToolTip": "Homepage\\Homepage.csproj",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEIAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-07T20:07:13.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "LoginDirectory.cs",
               "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectory.cs",
               "RelativeDocumentMoniker": "Login\\LoginDirectory.cs",
               "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Login\\LoginDirectory.cs",
               "RelativeToolTip": "Login\\LoginDirectory.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAADsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T19:12:02.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Form1.cs",
               "RelativeDocumentMoniker": "Homepage\\Form1.cs",
               "ToolTip": "C:\\Users\\Jr\\Documents\\Des. Soft. IV\\Programas\\Directorio\\Homepage\\Form1.cs",
               "RelativeToolTip": "Homepage\\Form1.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALUAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T19:03:57.23Z"
+              "WhenOpened": "2025-11-07T19:03:57.23Z",
+              "EditorCaption": ""
             }
           ]
         }

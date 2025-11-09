@@ -19,3 +19,25 @@ C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.Co
 C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.csproj.Up2Date
 C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.exe
 C:\Users\ROG STRIX\Source\Repos\Directorio\Homepage\obj\Debug\Homepage.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Homepage.exe.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Homepage.exe
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Homepage.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\DataBase.dll
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\MySql.Data.dll
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Perfil.exe
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\System.Memory.dll
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Perfil.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\Perfil.exe.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\DataBase.pdb
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\DataBase.dll.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\bin\Debug\MySql.Data.xml
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.csproj.AssemblyReference.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.exe.config
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.Form1.resources
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.Properties.Resources.resources
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.csproj.GenerateResource.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.csproj.CoreCompileInputs.cache
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.csproj.Up2Date
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.exe
+C:\Users\Jr\Documents\Des. Soft. IV\Programas\Directorio\Homepage\obj\Debug\Homepage.pdb
