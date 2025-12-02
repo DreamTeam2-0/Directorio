@@ -1,0 +1,9 @@
+2025-12-02 13:47:51 [INFO] - Rejected temp registration ID: 1
+2025-12-02 13:48:52 [ERROR] - Error confirming registration: Column 'username' cannot be null
+2025-12-02 13:48:55 [ERROR] - Error confirming registration: Column 'username' cannot be null
+2025-12-02 13:56:15 [ERROR] - Error confirming registration: Column 'username' cannot be null
+2025-12-02 14:02:39 [INFO] - Confirmed temp registration ID: 1 as role ID: 5
+2025-12-02 14:02:39 [INFO] - Mensaje del procedimiento: Registro confirmado exitosamente. ID Usuario: 9
+2025-12-02 14:57:13 [ERROR] - Error loading files: Unknown column 'ag.ID_Archivo_General' in 'field list'
+2025-12-02 15:01:22 [ERROR] - Error loading files: Unknown column 'ag.ID_Archivo_General' in 'field list'
+2025-12-02 15:37:01 [ERROR] - Failed to upload C:\Users\ROG STRIX\OneDrive\Documentos\Words\Qué riesgos enfrentaron.docx: Error: Data too long for column 'tipo_archivo' at row 1
