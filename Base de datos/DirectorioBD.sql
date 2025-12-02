@@ -81,6 +81,8 @@ CREATE TABLE datos_usuario (
     telefono VARCHAR(20) NOT NULL, -- Teléfono principal de contacto
     whatsapp VARCHAR(20), -- WhatsApp para comunicación directa
     otro_contacto VARCHAR(255), -- Instagram, Facebook, Telegram, etc.
+    identificacion_oficial VARCHAR(50) NULL, -- NULLable para usuarios clientes
+    zonas_servicio TEXT NULL, -- NULLable para usuarios clientes
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario)
@@ -136,4 +138,47 @@ CREATE TABLE acciones_sistema (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (ID_Usuario_Sistema) REFERENCES usuarios_sistema(ID_Usuario_Sistema)
+);
+
+-- NUEVA TABLA PERMANENTE: experiencia_usuario (unificada para Certificado y Empírico)
+CREATE TABLE experiencia_usuario (
+    ID_Experiencia INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Usuario INT NOT NULL,
+    tipo_registro ENUM('certificado', 'empirico') NOT NULL,
+    nivel_estudios ENUM('tecnico', 'tecnologo', 'profesional', 'especializacion', 'maestria', 'doctorado') DEFAULT NULL, -- NULL para Empírico
+    anos_experiencia VARCHAR(20) NOT NULL, -- INT para Certificado, ENUM texto para Empírico (ej: '1-3')
+    empresas_anteriores TEXT DEFAULT NULL,
+    proyectos_destacados TEXT DEFAULT NULL,
+    referencias_laborales TEXT DEFAULT NULL,
+    tipo_experiencia TEXT DEFAULT NULL, -- Para Empírico
+    descripcion_otro TEXT DEFAULT NULL, -- Para Empírico
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario) ON DELETE CASCADE
+);
+
+-- NUEVA TABLA PERMANENTE: archivos_proveedor (para archivos, incluyendo imágenes)
+CREATE TABLE archivos_proveedor (
+    ID_Archivo INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Usuario INT NOT NULL,
+    nombre_archivo VARCHAR(255) NOT NULL,
+    tipo_archivo VARCHAR(50) NOT NULL, -- ej: 'image/jpeg' para imágenes, 'application/pdf' para docs
+    contenido LONGBLOB NOT NULL, -- Datos binarios
+    categoria_archivo ENUM('certificado', 'titulo', 'licencia', 'internacional', 'foto_trabajo', 'testimonio', 'referencia') NOT NULL,
+    obligatorio BOOLEAN DEFAULT FALSE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario) ON DELETE CASCADE
+);
+
+-- NUEVA TABLA: archivos_generales (para archivos no vinculados a usuarios, como logos, iconos, etc.)
+CREATE TABLE archivos_generales (
+    ID_Archivo INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_archivo VARCHAR(255) NOT NULL,
+    tipo_archivo VARCHAR(50) NOT NULL, -- ej: 'image/jpeg', 'image/png'
+    contenido LONGBLOB NOT NULL, -- Datos binarios del archivo
+    categoria_archivo VARCHAR(100), -- Opcional: 'logo', 'icono', 'banner', etc.
+    descripcion TEXT, -- Opcional: descripción del archivo
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

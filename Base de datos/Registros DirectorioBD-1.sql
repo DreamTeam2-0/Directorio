@@ -30,3 +30,8 @@ INSERT INTO denominaciones (ID_Categoria, nombre, descripcion) VALUES
 (2, 'Mantenimiento de jardines', 'Podado, riego y cuidado de plantas'),
 (3, 'Construcción', 'Construcción de obras nuevas'),
 (3, 'Reparaciones', 'Reparación de estructuras existentes');
+
+
+INSERT INTO usuarios_sistema (username, email, password_hash, ID_Rol, nombres, apellidos, telefono) VALUES 
+('admin2', 'admin2@directorio.com', SHA2('admin2', 256), 1, 'Administrador', 'Sistema', '+1234567890');
+
