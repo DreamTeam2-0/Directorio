@@ -42,3 +42,30 @@ C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\De
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.exe.config
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.LoginDirectory.resources
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.RegistroFases.SubirArchivoEventArgs.resources
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.AssemblyReference.cache
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.exe.config
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Homepage.Form1.resources
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\LoginDirectorio.LoginDirectory.resources
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\LoginDirectorio.RegistroFases.SubirArchivoEventArgs.resources
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.Properties.Resources.resources
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.GenerateResource.cache
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.exe
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Directorio_Servicios.pdb
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Directorio_Servicios.exe.config
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Directorio_Servicios.exe
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Directorio_Servicios.pdb
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\System.Memory.dll
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Google.Protobuf.pdb
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Google.Protobuf.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\MySql.Data.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\System.Buffers.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Jr\Documents\GitHub\Direct_final\Directorio\Directorio_Servicios\obj\Debug\Director.3439CFAF.Up2Date

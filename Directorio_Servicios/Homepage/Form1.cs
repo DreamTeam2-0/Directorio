@@ -1,4 +1,6 @@
-﻿using Homepage.Logica;
+﻿using MySql.Data.MySqlClient;
+using DataBase;
+using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
 using Shared.Session;
@@ -22,8 +24,8 @@ namespace Homepage
         {
             InitializeComponent();
 
-            // Inicializar manejadores
-            _carruselManager = new CarruselManager(_categoriaServicio, flpCategorias, lblPagina, lblRango);
+            // Inicializar manejadores - NUEVO: pasar tlpSolicitados al constructor
+            _carruselManager = new CarruselManager(_categoriaServicio, flpCategorias, lblPagina, lblRango, tlpSolicitados);
             _panelManager = new PanelManager(panelLateral);
             _franjaManager = new FranjaManager(this, lblBienvenida, txtBuscar, btnBuscar);
             _buscadorManager = new BuscadorManager(txtBuscar, RealizarBusqueda);
@@ -37,8 +39,6 @@ namespace Homepage
             btnSiguiente.Click += BtnSiguiente_Click;
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
-
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,6 +63,9 @@ namespace Homepage
             _carruselManager.CargarCategorias();
             _carruselManager.InicializarCarrusel();
             _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+            // NUEVO: Cargar categorías más solicitadas
+            _carruselManager.CargarCategoriasMasSolicitadas();
         }
 
         private void RealizarBusqueda()
@@ -73,6 +76,7 @@ namespace Homepage
                 _carruselManager.CargarCategorias();
                 _carruselManager.RestablecerCarrusel();
                 _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+                _carruselManager.CargarCategoriasMasSolicitadas(); // NUEVO: refrescar populares
                 return;
             }
 
@@ -96,8 +100,7 @@ namespace Homepage
             _carruselManager.MoverSiguiente();
         }
 
-        // Resto de métodos permanecen iguales (simplificados)...
-
+        // Resto de métodos permanecen iguales...
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (_cerrandoParaPerfil)
@@ -172,6 +175,7 @@ namespace Homepage
                         _carruselManager.CargarCategorias();
                         _carruselManager.RestablecerCarrusel();
                         _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+                        _carruselManager.CargarCategoriasMasSolicitadas(); // NUEVO: refrescar populares
                     }
                 };
 
