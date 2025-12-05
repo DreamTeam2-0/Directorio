@@ -73,26 +73,26 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(12, 35);
+            this.lblBienvenida.Location = new System.Drawing.Point(12, 35); // MANTENER
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(272, 55);
             this.lblBienvenida.TabIndex = 1;
             this.lblBienvenida.Text = "Bienvenido";
-            // 
-            // txtBuscar
-            // 
+            //
+            // txtBuscar - Mover más a la derecha
+            //
             this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscar.Location = new System.Drawing.Point(340, 55);
+            this.txtBuscar.Location = new System.Drawing.Point(650, 55); // Cambiado de 340 a 700
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(253, 20);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.Text = "BUSCAR CATEGORÍAS";
-            // 
-            // btnBuscar
-            // 
+            //
+            // btnBuscar - Mover más a la derecha
+            //
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(616, 45);
+            this.btnBuscar.Location = new System.Drawing.Point(920, 45); // Cambiado de 616 a 976
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(96, 37);
             this.btnBuscar.TabIndex = 3;
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 645);
+            this.ClientSize = new System.Drawing.Size(1060, 645);
             this.Controls.Add(this.lblRango);
             this.Controls.Add(this.lblPagina);
             this.Controls.Add(this.btnSiguiente);

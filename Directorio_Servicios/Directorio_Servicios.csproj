@@ -109,8 +109,21 @@
     <Compile Include="Homepage\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homepage\Logica\BuscadorManager.cs" />
+    <Compile Include="Homepage\Logica\CarruselManger.cs" />
     <Compile Include="Homepage\Logica\CategoriaServicio.cs" />
+    <Compile Include="Homepage\Logica\FranjaManager.cs" />
+    <Compile Include="Homepage\Logica\PanelManager.cs" />
     <Compile Include="Homepage\Modelos\Categoria.cs" />
+    <Compile Include="Homepage\ProveedorHome\Logica\FranjaManager.cs" />
+    <Compile Include="Homepage\ProveedorHome\Logica\PanelManager.cs" />
+    <Compile Include="Homepage\ProveedorHome\Logica\ProveedorServicios.cs" />
+    <Compile Include="Homepage\ProveedorHome\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\ProveedorHome\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage\UI\CrearBoton.cs" />
     <Compile Include="Login\DBHelp\DatabaseHelper.cs" />
     <Compile Include="Login\LoginDirectory.cs">
@@ -169,12 +182,20 @@
       <DependentUpon>RegistroProveedorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Perfil\Logica\PerfilServicio.cs" />
+    <Compile Include="Perfil\Logica\ProveedorServicio.cs" />
     <Compile Include="Perfil\Modelos\PerfilUsuario.cs" />
+    <Compile Include="Perfil\Modelos\ProveedorUsuario.cs" />
     <Compile Include="Perfil\PerfilForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Perfil\PerfilForm.Designer.cs">
       <DependentUpon>PerfilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\PerfilProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil\PerfilProveedor.Designer.cs">
+      <DependentUpon>PerfilProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

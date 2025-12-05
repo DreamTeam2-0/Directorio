@@ -11,6 +11,7 @@ using DBHelp.DatabaseHelper;
 using PassHelp.PasswordHelper;
 using Shared.Session;
 using Homepage;
+using ProveedorHome; // Agregar este using para la interfaz de proveedor
 
 namespace LoginDirectorio
 {
@@ -62,15 +63,11 @@ namespace LoginDirectorio
                     MessageBox.Show($"¡Bienvenido {resultado.nombreCompleto}!", "Login Exitoso");
                     LimpiarCampos();
 
-                    // SOLUCIÓN SIMPLIFICADA
+                    // REDIRECCIÓN SEGÚN ROL
                     this.Hide();
-                    Form1 homepage = new Form1();
-                    homepage.FormClosed += (s, args) =>
-                    {
-                        // Cuando Form1 se cierra completamente, mostrar login
-                        this.Show();
-                    };
-                    homepage.Show(); // Usar Show() para permitir navegación
+
+                    // Verificar el rol para abrir la interfaz correspondiente
+                    AbrirInterfazSegunRol(resultado.rol);
                 }
                 else
                 {
@@ -83,6 +80,49 @@ namespace LoginDirectorio
                 txtPassword.SelectAll();
                 txtPassword.Focus();
             }
+        }
+
+        private void AbrirInterfazSegunRol(string rol)
+        {
+            switch (rol.ToLower())
+            {
+                case "empleado":
+                    AbrirInterfazProveedor();
+                    break;
+
+                case "cliente":
+                    AbrirInterfazCliente();
+                    break;
+
+                default:
+                    // Por defecto, abrir la interfaz de cliente
+                    MessageBox.Show($"Rol '{rol}' detectado. Abriendo interfaz por defecto.",
+                                  "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AbrirInterfazCliente();
+                    break;
+            }
+        }
+
+        private void AbrirInterfazCliente()
+        {
+            Form1 homepage = new Form1();
+            homepage.FormClosed += (s, args) =>
+            {
+                // Cuando Form1 se cierra completamente, mostrar login
+                this.Show();
+            };
+            homepage.Show();
+        }
+
+        private void AbrirInterfazProveedor()
+        {
+            Proveedor proveedorForm = new Proveedor();
+            proveedorForm.FormClosed += (s, args) =>
+            {
+                // Cuando Proveedor se cierra completamente, mostrar login
+                this.Show();
+            };
+            proveedorForm.Show();
         }
 
         private void LimpiarCampos()
@@ -107,8 +147,6 @@ namespace LoginDirectorio
             }
             else if (result == DialogResult.No) // No = Proveedor
             {
-                // MODIFICADO: Ahora abre el formulario RegistroProveedorForm
-                // que permite elegir entre Certificado o Empírico
                 this.Hide();
                 var formularioProveedor = new RegistroProveedorForm();
                 formularioProveedor.FormClosed += (s, args) => this.Show();
@@ -116,6 +154,5 @@ namespace LoginDirectorio
             }
             // Si es Cancel, no hace nada
         }
-
     }
 }
