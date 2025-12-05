@@ -22,8 +22,7 @@ namespace Perfil.Logica
 
                     var datos = new ProveedorUsuario
                     {
-                        IdUsuario = UserSession.IdUsuario,
-                        Especialidades = new List<EspecialidadProveedorModel>()
+                        IdUsuario = UserSession.IdUsuario
                     };
 
                     // 1. Obtener datos personales
@@ -81,28 +80,6 @@ namespace Perfil.Logica
                         }
                     }
 
-                    // 3. Obtener categorías/servicios
-                    string queryServicios = @"
-                        SELECT s.ID_Categoria, c.nombre as categoria, s.experiencia
-                        FROM servicios s
-                        INNER JOIN categorias c ON s.ID_Categoria = c.ID_Categoria
-                        WHERE s.ID_Usuario = @idUsuario
-                        GROUP BY s.ID_Categoria";
-
-                    using (var reader = db.ExecuteReader(queryServicios,
-                        new MySqlParameter("@idUsuario", UserSession.IdUsuario)))
-                    {
-                        while (reader.Read())
-                        {
-                            datos.Especialidades.Add(new EspecialidadProveedorModel
-                            {
-                                IdCategoria = Convert.ToInt32(reader["ID_Categoria"]),
-                                NombreCategoria = reader["categoria"].ToString(),
-                                DescripcionServicios = reader["experiencia"]?.ToString() ?? ""
-                            });
-                        }
-                    }
-
                     return datos;
                 }
             }
@@ -112,46 +89,6 @@ namespace Perfil.Logica
                 return null;
             }
         }
-
-        public List<CategoriaModel> ObtenerCategorias()
-        {
-            var categorias = new List<CategoriaModel>();
-
-            try
-            {
-                using (var db = new BDConector())
-                {
-                    db.Open();
-
-                    string query = @"
-                        SELECT ID_Categoria, nombre, descripcion
-                        FROM categorias 
-                        WHERE activa = TRUE
-                        ORDER BY nombre";
-
-                    using (var reader = db.ExecuteReader(query))
-                    {
-                        while (reader.Read())
-                        {
-                            categorias.Add(new CategoriaModel
-                            {
-                                Id = Convert.ToInt32(reader["ID_Categoria"]),
-                                Nombre = reader["nombre"].ToString(),
-                                Descripcion = reader["descripcion"]?.ToString() ?? ""
-                            });
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error obteniendo categorías: {ex.Message}");
-            }
-
-            return categorias;
-        }
-
-
 
         public bool ActualizarDatosProveedor(ProveedorUsuario datos)
         {
@@ -247,36 +184,6 @@ namespace Perfil.Logica
                                 new MySqlParameter("@referencias", datos.Experiencia.ReferenciasLaborales ?? (object)DBNull.Value),
                                 new MySqlParameter("@tipoExp", datos.Experiencia.TipoExperiencia ?? (object)DBNull.Value),
                                 new MySqlParameter("@descOtro", datos.Experiencia.DescripcionOtro ?? (object)DBNull.Value));
-                        }
-                    }
-
-                    // 3. Eliminar servicios existentes para reinsertar (simplificado)
-                    // En una versión más avanzada, se debería hacer un merge
-                    string deleteServicios = "DELETE FROM servicios WHERE ID_Usuario = @idUsuario";
-                    db.ExecuteNonQuery(deleteServicios,
-                        new MySqlParameter("@idUsuario", UserSession.IdUsuario));
-
-                    // 4. Insertar nuevos servicios por cada categoría
-                    if (datos.Especialidades != null)
-                    {
-                        foreach (var especialidad in datos.Especialidades)
-                        {
-                            string insertServicio = @"
-                                INSERT INTO servicios 
-                                (ID_Usuario, ID_Categoria, titulo, descripcion, experiencia,
-                                 tipo_precio, visitas)
-                                VALUES 
-                                (@idUsuario, @idCategoria, @titulo, @descripcion, @experiencia,
-                                 'consultar', 0)";
-
-                            string titulo = $"Servicio de {especialidad.NombreCategoria}";
-
-                            db.ExecuteNonQuery(insertServicio,
-                                new MySqlParameter("@idUsuario", UserSession.IdUsuario),
-                                new MySqlParameter("@idCategoria", especialidad.IdCategoria),
-                                new MySqlParameter("@titulo", titulo),
-                                new MySqlParameter("@descripcion", especialidad.DescripcionServicios ?? ""),
-                                new MySqlParameter("@experiencia", especialidad.DescripcionServicios ?? ""));
                         }
                     }
 

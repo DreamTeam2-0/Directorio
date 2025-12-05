@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Perfil.Logica;
 using Perfil.Modelos;
@@ -20,7 +19,6 @@ namespace Perfil
         private void EditarDatosProveedorForm_Load(object sender, EventArgs e)
         {
             CargarDatosProveedor();
-            CargarListaCategorias();
         }
 
         private void CargarDatosProveedor()
@@ -29,59 +27,44 @@ namespace Perfil
             {
                 _datosActuales = _datosService.ObtenerDatosProveedor();
 
-                if (_datosActuales != null)
+                if (_datosActuales == null)
                 {
-                    // Datos personales
-                    txtNombres.Text = _datosActuales.Nombres;
-                    txtApellidos.Text = _datosActuales.Apellidos;
-                    txtEmail.Text = _datosActuales.Email;
-                    txtTelefono.Text = _datosActuales.Telefono;
-                    txtWhatsApp.Text = _datosActuales.Whatsapp;
-                    txtCiudad.Text = _datosActuales.Ciudad;
-                    txtDireccion.Text = _datosActuales.Direccion;
-                    txtZonasServicio.Text = _datosActuales.ZonasServicio;
-                    txtOtroContacto.Text = _datosActuales.OtroContacto;
+                    MessageBox.Show("No se pudieron cargar los datos del perfil.", "Información",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-                    // Datos de experiencia
-                    if (_datosActuales.Experiencia != null)
+                // Datos personales
+                txtNombres.Text = _datosActuales.Nombres ?? "";
+                txtApellidos.Text = _datosActuales.Apellidos ?? "";
+                txtEmail.Text = _datosActuales.Email ?? "";
+                txtTelefono.Text = _datosActuales.Telefono ?? "";
+                txtWhatsApp.Text = _datosActuales.Whatsapp ?? "";
+                txtCiudad.Text = _datosActuales.Ciudad ?? "";
+                txtDireccion.Text = _datosActuales.Direccion ?? "";
+                txtZonasServicio.Text = _datosActuales.ZonasServicio ?? "";
+                txtOtroContacto.Text = _datosActuales.OtroContacto ?? "";
+
+                // Datos de experiencia
+                if (_datosActuales.Experiencia != null)
+                {
+                    txtAnosExperiencia.Text = _datosActuales.Experiencia.AnosExperiencia ?? "";
+                    txtEmpresasAnteriores.Text = _datosActuales.Experiencia.EmpresasAnteriores ?? "";
+                    txtProyectosDestacados.Text = _datosActuales.Experiencia.ProyectosDestacados ?? "";
+                    txtReferencias.Text = _datosActuales.Experiencia.ReferenciasLaborales ?? "";
+
+                    // Tipo de proveedor
+                    if (_datosActuales.Experiencia.TipoRegistro == "certificado")
                     {
-                        txtAnosExperiencia.Text = _datosActuales.Experiencia.AnosExperiencia;
-                        txtEmpresasAnteriores.Text = _datosActuales.Experiencia.EmpresasAnteriores;
-                        txtProyectosDestacados.Text = _datosActuales.Experiencia.ProyectosDestacados;
-                        txtReferencias.Text = _datosActuales.Experiencia.ReferenciasLaborales;
-
-                        // Tipo de proveedor
-                        if (_datosActuales.Experiencia.TipoRegistro == "certificado")
-                        {
-                            rbCertificado.Checked = true;
-                            CargarNivelEstudios();
-                        }
-                        else
-                        {
-                            rbEmpirico.Checked = true;
-                            txtTipoExperiencia.Text = _datosActuales.Experiencia.TipoExperiencia;
-                            txtDescripcionOtro.Text = _datosActuales.Experiencia.DescripcionOtro;
-                        }
+                        rbCertificado.Checked = true;
+                        CargarNivelEstudios();
+                        cbNivelEstudios.Text = _datosActuales.Experiencia.NivelEstudios ?? "";
                     }
-
-                    // Cargar especialidades existentes
-                    if (_datosActuales.Especialidades != null)
+                    else
                     {
-                        foreach (var especialidad in _datosActuales.Especialidades)
-                        {
-                            // Marcar categorías seleccionadas
-                            foreach (var item in lbCategorias.Items)
-                            {
-                                if (item.ToString() == especialidad.NombreCategoria)
-                                {
-                                    lbCategorias.SelectedItem = item;
-                                    break;
-                                }
-                            }
-
-                            txtHerramientas.Text = especialidad.Herramientas;
-                            txtDescripcionServicios.Text = especialidad.DescripcionServicios;
-                        }
+                        rbEmpirico.Checked = true;
+                        txtTipoExperiencia.Text = _datosActuales.Experiencia.TipoExperiencia ?? "";
+                        txtDescripcionOtro.Text = _datosActuales.Experiencia.DescripcionOtro ?? "";
                     }
                 }
             }
@@ -89,25 +72,6 @@ namespace Perfil
             {
                 MessageBox.Show($"Error al cargar datos: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CargarListaCategorias()
-        {
-            try
-            {
-                var categorias = _datosService.ObtenerCategorias();
-                lbCategorias.Items.Clear();
-
-                foreach (var categoria in categorias)
-                {
-                    lbCategorias.Items.Add($"{categoria.Id} - {categoria.Nombre}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar categorías: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -123,22 +87,12 @@ namespace Perfil
                 "Maestría",
                 "Doctorado"
             });
-
-            if (_datosActuales?.Experiencia != null && !string.IsNullOrEmpty(_datosActuales.Experiencia.NivelEstudios))
-            {
-                cbNivelEstudios.Text = _datosActuales.Experiencia.NivelEstudios;
-            }
         }
 
         private void rbCertificado_CheckedChanged(object sender, EventArgs e)
         {
             pnlCertificado.Visible = rbCertificado.Checked;
             pnlEmpirico.Visible = rbEmpirico.Checked;
-
-            if (rbCertificado.Checked)
-            {
-                CargarNivelEstudios();
-            }
         }
 
         private void rbEmpirico_CheckedChanged(object sender, EventArgs e)
@@ -178,26 +132,8 @@ namespace Perfil
                         NivelEstudios = rbCertificado.Checked ? cbNivelEstudios.Text : null,
                         TipoExperiencia = rbEmpirico.Checked ? txtTipoExperiencia.Text.Trim() : null,
                         DescripcionOtro = rbEmpirico.Checked ? txtDescripcionOtro.Text.Trim() : null
-                    },
-
-                    // Especialidades
-                    Especialidades = new System.Collections.Generic.List<EspecialidadProveedorModel>()
+                    }
                 };
-
-                // Agregar categorías seleccionadas
-                foreach (var item in lbCategorias.SelectedItems)
-                {
-                    var itemStr = item.ToString();
-                    var idCategoria = int.Parse(itemStr.Split('-')[0].Trim());
-
-                    datosActualizados.Especialidades.Add(new EspecialidadProveedorModel
-                    {
-                        IdCategoria = idCategoria,
-                        NombreCategoria = itemStr.Split('-')[1].Trim(),
-                        Herramientas = txtHerramientas.Text.Trim(),
-                        DescripcionServicios = txtDescripcionServicios.Text.Trim()
-                    });
-                }
 
                 // Guardar en la base de datos
                 bool resultado = _datosService.ActualizarDatosProveedor(datosActualizados);
@@ -282,14 +218,6 @@ namespace Perfil
                 return false;
             }
 
-            // Validar al menos una categoría seleccionada
-            if (lbCategorias.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Seleccione al menos una categoría de servicio", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
             return true;
         }
 
@@ -297,45 +225,6 @@ namespace Perfil
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        // Métodos adicionales que necesitan ser agregados a EditarDatosProveedorForm.cs
-
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
-        {
-            // Seleccionar/deseleccionar todas las categorías
-            if (lbCategorias.SelectedItems.Count == lbCategorias.Items.Count)
-            {
-                // Si todas están seleccionadas, deseleccionar todas
-                for (int i = 0; i < lbCategorias.Items.Count; i++)
-                {
-                    lbCategorias.SetSelected(i, false);
-                }
-                btnAgregarCategoria.Text = "Seleccionar Todo";
-            }
-            else
-            {
-                // Si no todas están seleccionadas, seleccionar todas
-                for (int i = 0; i < lbCategorias.Items.Count; i++)
-                {
-                    lbCategorias.SetSelected(i, true);
-                }
-                btnAgregarCategoria.Text = "Deseleccionar Todo";
-            }
-        }
-
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-
-            // Ajustar tamaño del formulario si es necesario
-            if (lbCategorias.Items.Count > 10)
-            {
-                lbCategorias.Height = 250;
-                this.Height = 650;
-                btnGuardar.Location = new Point(btnGuardar.Location.X, btnGuardar.Location.Y + 50);
-                btnCancelar.Location = new Point(btnCancelar.Location.X, btnCancelar.Location.Y + 50);
-            }
         }
     }
 }
