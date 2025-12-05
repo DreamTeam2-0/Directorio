@@ -8,17 +8,29 @@ using System.Windows.Forms;
 
 namespace Directorio_Servicios
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginDirectory());
+
+            try
+            {
+                LoginDirectorio.LoginDirectory login = new LoginDirectorio.LoginDirectory();
+                Application.Run(login);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error crítico: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Asegurar que todo se cierra
+                Application.Exit();
+            }
         }
     }
 }

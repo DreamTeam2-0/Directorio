@@ -181,8 +181,17 @@
     <Compile Include="Login\RegistroProveedorForm.Designer.cs">
       <DependentUpon>RegistroProveedorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Perfil\EditarServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil\EditarServicios.Designer.cs">
+      <DependentUpon>EditarServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\Logica\CategoriaManager.cs" />
     <Compile Include="Perfil\Logica\PerfilServicio.cs" />
     <Compile Include="Perfil\Logica\ProveedorServicio.cs" />
+    <Compile Include="Perfil\Logica\ServicioManager.cs" />
+    <Compile Include="Perfil\Modelos\ExperienciaManager.cs" />
     <Compile Include="Perfil\Modelos\PerfilUsuario.cs" />
     <Compile Include="Perfil\Modelos\ProveedorUsuario.cs" />
     <Compile Include="Perfil\PerfilForm.cs">

@@ -108,8 +108,16 @@ namespace LoginDirectorio
             Form1 homepage = new Form1();
             homepage.FormClosed += (s, args) =>
             {
+                // IMPORTANTE: Verificar si la aplicación ya se está cerrando
+                if (!Application.MessageLoop)
+                    return;
+
                 // Cuando Form1 se cierra completamente, mostrar login
-                this.Show();
+                if (!this.IsDisposed && this.Visible == false)
+                {
+                    this.Show();
+                    this.Focus();
+                }
             };
             homepage.Show();
         }
@@ -119,8 +127,16 @@ namespace LoginDirectorio
             Proveedor proveedorForm = new Proveedor();
             proveedorForm.FormClosed += (s, args) =>
             {
+                // IMPORTANTE: Verificar si la aplicación ya se está cerrando
+                if (!Application.MessageLoop)
+                    return;
+
                 // Cuando Proveedor se cierra completamente, mostrar login
-                this.Show();
+                if (!this.IsDisposed && this.Visible == false)
+                {
+                    this.Show();
+                    this.Focus();
+                }
             };
             proveedorForm.Show();
         }
@@ -130,6 +146,31 @@ namespace LoginDirectorio
             txtUsuario.Text = "";
             txtPassword.Text = "";
             txtUsuario.Focus();
+        }
+
+        private void LoginDirectory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Confirmar cierre de aplicación
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var resultado = MessageBox.Show("¿Está seguro que desea salir de la aplicación?",
+                                              "Salir",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Asegurar que la sesión se cierra correctamente
+                    UserSession.CerrarSesion();
+
+                    // Forzar cierre de todos los hilos
+                    Application.ExitThread();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

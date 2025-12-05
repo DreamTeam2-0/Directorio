@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using ProveedorHome.Logica;
 using ProveedorHome.Servicios;
+using Perfil;
 using FranjaManager = ProveedorHome.Logica.FranjaManager;
 using PanelManager = ProveedorHome.Logica.PanelManager;
 
@@ -109,18 +110,22 @@ namespace ProveedorHome
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                var resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?",
-                                              "Cerrar Sesión",
-                                              MessageBoxButtons.YesNo,
-                                              MessageBoxIcon.Question);
+                // Solo mostrar confirmación si la sesión sigue activa
+                if (UserSession.SesionActiva)
+                {
+                    var resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?",
+                                                  "Cerrar Sesión",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
 
-                if (resultado == DialogResult.Yes)
-                {
-                    UserSession.CerrarSesion();
-                }
-                else
-                {
-                    e.Cancel = true;
+                    if (resultado == DialogResult.Yes)
+                    {
+                        UserSession.CerrarSesion();
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
                 }
             }
         }
@@ -135,20 +140,24 @@ namespace ProveedorHome
             _panelManager.TogglePanelLateral();
         }
 
-        private void btnVerPerfil_Click(object sender, EventArgs e)
-        {
-            _panelManager.TogglePanelLateral();
-            // Abrir formulario de perfil
-            MessageBox.Show("Aquí se abrirá tu perfil público", "Perfil",
-                          MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
+        // Reemplazar el método btnEditarServicios_Click en Proveedor.cs
         private void btnEditarServicios_Click(object sender, EventArgs e)
         {
             _panelManager.TogglePanelLateral();
+
             // Abrir formulario de edición de servicios
-            MessageBox.Show("Aquí se abrirá el editor de servicios", "Editar Servicios",
-                          MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using (var editarServiciosForm = new Perfil.EditarServicios())
+            {
+                editarServiciosForm.StartPosition = FormStartPosition.CenterParent;
+                editarServiciosForm.ShowDialog();
+
+                // Recargar datos después de cerrar el formulario
+                if (editarServiciosForm.DialogResult == DialogResult.OK ||
+                    editarServiciosForm.DialogResult == DialogResult.Yes)
+                {
+                    CargarDatosIniciales();
+                }
+            }
         }
 
         private void btnEditarDatos_Click(object sender, EventArgs e)
@@ -177,11 +186,31 @@ namespace ProveedorHome
 
             if (resultado == DialogResult.Yes)
             {
-                // Abrir formulario de cliente (Form1)
+                // Guardar estado actual del formulario
+                var proveedorForm = this;
+
+                // Usar el nuevo método
+                UserSession.CambiarAVistaCliente();
+
+                // Abrir formulario de cliente
                 this.Hide();
                 Homepage.Form1 clienteForm = new Homepage.Form1();
-                LoginDirectorio.LoginDirectory login = new LoginDirectorio.LoginDirectory();
-                clienteForm.FormClosed += (s, args) => login.Show();
+                clienteForm.FormClosed += (s, args) =>
+                {
+                    // Verificar si la sesión sigue activa
+                    if (UserSession.SesionActiva)
+                    {
+                        UserSession.RestaurarRolOriginal();
+                        proveedorForm.Show();
+                        proveedorForm.Focus();
+                        proveedorForm.BringToFront();
+                    }
+                    else
+                    {
+                        // Si no hay sesión, cerrar todo
+                        proveedorForm.Close();
+                    }
+                };
                 clienteForm.Show();
             }
         }
@@ -228,5 +257,7 @@ namespace ProveedorHome
                 this.Text = $"Panel Proveedor - {UserSession.NombreCompleto}";
             }
         }
+
+        
     }
 }
