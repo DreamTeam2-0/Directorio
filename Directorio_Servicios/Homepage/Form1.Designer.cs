@@ -187,6 +187,7 @@
             this.btnCambiarEmprendedor.TabIndex = 3;
             this.btnCambiarEmprendedor.Text = "Cambiar a Prestador de Servicios";
             this.btnCambiarEmprendedor.UseVisualStyleBackColor = false;
+            this.btnCambiarEmprendedor.Click += new System.EventHandler(this.btnVolverProveedor_Click);
             // 
             // btnConfiguraciones
             // 

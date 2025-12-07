@@ -129,5 +129,6 @@ namespace Homepage.Logica
         }
 
         public int TotalCategorias() => _categorias.Count;
+
     }
 }

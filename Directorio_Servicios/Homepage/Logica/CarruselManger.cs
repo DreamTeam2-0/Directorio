@@ -1,5 +1,7 @@
 ﻿using Homepage.Modelos;
 using Homepage.UI;
+using MySql.Data.MySqlClient;
+using DataBase;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,6 +16,7 @@ namespace Homepage.Logica
         private FlowLayoutPanel _flpCategorias;
         private Label _lblPagina;
         private Label _lblRango;
+        private TableLayoutPanel _tlpSolicitados; // NUEVO: Referencia a la tabla de solicitados
 
         private List<Categoria> _todasLasCategorias = new List<Categoria>();
         private List<Button> _botonesCategorias = new List<Button>();
@@ -23,13 +26,15 @@ namespace Homepage.Logica
         private bool _modoBusqueda = false;
         private string _ultimaBusqueda = "";
 
+        // Constructor modificado para aceptar tlpSolicitados
         public CarruselManager(CategoriaServicio categoriaServicio, FlowLayoutPanel flpCategorias,
-                               Label lblPagina, Label lblRango)
+                               Label lblPagina, Label lblRango, TableLayoutPanel tlpSolicitados) // NUEVO parámetro
         {
             _categoriaServicio = categoriaServicio;
             _flpCategorias = flpCategorias;
             _lblPagina = lblPagina;
             _lblRango = lblRango;
+            _tlpSolicitados = tlpSolicitados; // NUEVO: asignar referencia
         }
 
         public void CargarCategorias()
@@ -119,7 +124,19 @@ namespace Homepage.Logica
             btn.Click += (s, e) =>
             {
                 var cat = (Categoria)((Button)s).Tag;
-                CrearBoton.MostrarInfo($"Seleccionaste: {cat.Nombre} (ID: {cat.Id})");
+                try
+                {
+                    // Incrementa visitas en BD cuando se hace clic
+                    IncrementarVisitasCategoria(cat.Id);
+
+                    // Actualizar la lista de categorías más solicitadas
+                    CargarCategoriasMasSolicitadas();
+                }
+                catch (Exception ex)
+                {
+                    CrearBoton.MostrarError($"Error al registrar visita: {ex.Message}");
+                }
+                CrearBoton.MostrarInfo($"Seleccionaste: {cat.Nombre}");
             };
             return btn;
         }
@@ -323,6 +340,134 @@ namespace Homepage.Logica
         {
             _indiceInicio = 0;
             InicializarCarrusel();
+        }
+
+        private void IncrementarVisitasCategoria(int idCategoria)
+        {
+            string query = "UPDATE categorias SET visitas = visitas + 1, fecha_modificacion = CURRENT_TIMESTAMP WHERE ID_Categoria = @id";
+
+            try
+            {
+                using (var db = new BDConector())
+                {
+                    db.Open();
+                    using (var cmd = new MySqlCommand(query, db._connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idCategoria);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error al actualizar visitas: {ex.Message}");
+            }
+        }
+
+        public void CargarCategoriasMasSolicitadas()
+        {
+            if (_tlpSolicitados == null) return;
+
+            // Limpiar controles existentes
+            _tlpSolicitados.Controls.Clear();
+            _tlpSolicitados.ColumnStyles.Clear();
+            _tlpSolicitados.ColumnCount = 0;
+
+            string query = @"
+        SELECT ID_Categoria, nombre, color, visitas 
+        FROM categorias 
+        WHERE activa = TRUE 
+        ORDER BY visitas DESC 
+        LIMIT 2";
+
+            try
+            {
+                using (var db = new BDConector())
+                {
+                    db.Open();
+                    using (var reader = db.ExecuteReader(query))
+                    {
+                        int columnIndex = 0;
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32("ID_Categoria");
+                            string nombre = reader.GetString("nombre");
+                            string colorHex = reader.IsDBNull(reader.GetOrdinal("color")) ? "#4CAF50" : reader.GetString("color");
+                            int visitas = reader.GetInt32("visitas");
+
+                            // Crear panel para cada categoría popular
+                            Panel panel = new Panel
+                            {
+                                Size = new Size(250, 120),  // Tamaño aumentado
+                                BackColor = Color.FromArgb(245, 245, 245),
+                                BorderStyle = BorderStyle.FixedSingle,
+                                Margin = new Padding(15),  // Margen aumentado
+                                Tag = id
+                            };
+
+                            // Etiqueta para el nombre - CENTRADA y más grande
+                            Label lblNombre = new Label
+                            {
+                                Text = nombre.ToUpper(),
+                                Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold),  // Fuente más grande
+                                ForeColor = ColorTranslator.FromHtml(colorHex),
+                                AutoSize = false,
+                                Dock = DockStyle.Fill,  // Ocupa todo el espacio disponible
+                                TextAlign = ContentAlignment.MiddleCenter,  // Centrado
+                                Height = 80  // Más alto para centrar mejor
+                            };
+
+                            // Etiqueta para las visitas - en la parte inferior
+                            Label lblVisitas = new Label
+                            {
+                                Text = $"{visitas} visitas",
+                                Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Italic),
+                                ForeColor = Color.Gray,
+                                Dock = DockStyle.Bottom,  // Se queda abajo
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                Height = 25
+                            };
+
+                            // Añadir controles en orden inverso (último se dibuja primero)
+                            panel.Controls.Add(lblVisitas);
+                            panel.Controls.Add(lblNombre);  // Sin icono
+
+                            // Evento clic para incrementar visitas
+                            panel.Click += (s, e) =>
+                            {
+                                IncrementarVisitasCategoria(id);
+                                CrearBoton.MostrarInfo($"¡Haz hecho clic en {nombre}!\nVisitas actualizadas.");
+                                CargarCategoriasMasSolicitadas(); // Refrescar la lista
+                            };
+
+                            // Agregar al TableLayoutPanel
+                            _tlpSolicitados.ColumnCount++;
+                            _tlpSolicitados.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+                            _tlpSolicitados.Controls.Add(panel, columnIndex, 0);
+                            columnIndex++;
+                        }
+                    }
+                }
+
+                // Si no hay categorías populares, mostrar mensaje
+                if (_tlpSolicitados.Controls.Count == 0)
+                {
+                    Label lblVacio = new Label
+                    {
+                        Text = "Aún no hay categorías populares",
+                        Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Italic),
+                        ForeColor = Color.Gray,
+                        AutoSize = true,
+                        Dock = DockStyle.Fill,
+                        TextAlign = ContentAlignment.MiddleCenter
+                    };
+                    _tlpSolicitados.Controls.Add(lblVacio, 0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearBoton.MostrarError($"Error al cargar categorías populares: {ex.Message}");
+            }
         }
 
         public List<Categoria> TodasLasCategorias => _todasLasCategorias;

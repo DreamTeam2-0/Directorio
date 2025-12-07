@@ -1,35 +1,50 @@
-﻿using Homepage.Logica;
+﻿using MySql.Data.MySqlClient;
+using DataBase;
+using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
 using Shared.Session;
 using Perfil;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Homepage
 {
     public partial class Form1 : Form
     {
-        private readonly CategoriaServicio categoriaServicio = new CategoriaServicio();
-        private bool panelLateralVisible = false;
+        private readonly CategoriaServicio _categoriaServicio = new CategoriaServicio();
+        private CarruselManager _carruselManager;
+        private PanelManager _panelManager;
+        private FranjaManager _franjaManager;
+        private BuscadorManager _buscadorManager;
+        private bool _cerrandoParaPerfil = false;
 
         public Form1()
         {
             InitializeComponent();
+
+            // Inicializar manejadores - NUEVO: pasar tlpSolicitados al constructor
+            _carruselManager = new CarruselManager(_categoriaServicio, flpCategorias, lblPagina, lblRango, tlpSolicitados);
+            _panelManager = new PanelManager(panelLateral);
+            _franjaManager = new FranjaManager(this, lblBienvenida, txtBuscar, btnBuscar);
+            _buscadorManager = new BuscadorManager(txtBuscar, RealizarBusqueda);
+
+            // Configurar eventos
             this.Load += Form1_Load;
             btnBuscar.Click += BtnBuscar_Click;
-
-            // Evento para cerrar el panel al hacer click fuera de él
             this.Click += Form1_Click;
-
-            
+            this.FormClosing += Form1_FormClosing;
+            btnAnterior.Click += BtnAnterior_Click;
+            btnSiguiente.Click += BtnSiguiente_Click;
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // VERIFICAR SI HAY SESIÓN ACTIVA
+            UserSession.VerificarYReiniciarSiEsNecesario();
+
             if (!UserSession.SesionActiva)
             {
                 MessageBox.Show("No hay sesión activa. Será redirigido al login.", "Sesión Expirada",
@@ -40,128 +55,154 @@ namespace Homepage
 
             lblBienvenida.Text = $"Bienvenido, {UserSession.Username}";
 
-            ConfigurarBuscador();
-            CargarCategorias();
+            // MOSTRAR/OCULTAR BOTÓN "Volver a Proveedor" con mejor lógica
+            if (UserSession.EnVistaTemporalCliente() || UserSession.Rol.ToLower() == "empleado")
+            {
+                btnCambiarEmprendedor.Visible = true;
+
+                // Actualizar el nombre del botón existente
+                btnCambiarEmprendedor.Text = UserSession.EnVistaTemporalCliente()
+                    ? "← Volver a Proveedor"
+                    : "Cambiar a Prestador de Servicios";
+            }
+            else if (UserSession.EnVistaTemporalCliente() || UserSession.Rol.ToLower() == "cliente_vista")
+            {
+                btnCambiarEmprendedor.Visible = true;
+
+                // Actualizar el nombre del botón existente
+                btnCambiarEmprendedor.Text = UserSession.EnVistaTemporalCliente()
+                    ? "Cambiar a Prestador de Servicios"
+                    : "Cambiar a Prestador de Servicios";
+            }
+
+            // Crear franja verde
+            _franjaManager.CrearFranjaVerde();
+
+            // Configurar buscador
+            _buscadorManager.ConfigurarBuscador();
+
+            // Cargar categorías
+            _carruselManager.CargarCategorias();
+            _carruselManager.InicializarCarrusel();
+            _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+            // Cargar categorías más solicitadas
+            _carruselManager.CargarCategoriasMasSolicitadas();
         }
 
-        private void ConfigurarBuscador()
+        private bool VerificarSesionActiva()
         {
-            // Placeholder
-            txtBuscar.GotFocus += (s, e) => { if (txtBuscar.Text == "BUSCAR CATEGORÍAS") { txtBuscar.Text = ""; txtBuscar.ForeColor = Color.Black; } };
-            txtBuscar.LostFocus += (s, e) => { if (string.IsNullOrWhiteSpace(txtBuscar.Text)) { txtBuscar.Text = "BUSCAR CATEGORÍAS"; txtBuscar.ForeColor = Color.Gray; } };
-
-            // SOLO LETRAS Y ESPACIOS
-            txtBuscar.KeyPress += (s, e) =>
+            if (!UserSession.SesionActiva)
             {
-                if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-                {
-                    e.Handled = true;
-                    CrearBoton.MostrarError("Solo se permiten letras y espacios.");
-                }
-            };
+                MessageBox.Show("La sesión ha expirado. Será redirigido al login.",
+                              "Sesión Expirada",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
 
-            // VALIDACIÓN AL PERDER FOCO
-            txtBuscar.Validating += (s, e) =>
-            {
-                if (txtBuscar.Text.Length < 3 && txtBuscar.Text != "BUSCAR CATEGORÍAS")
-                {
-                    e.Cancel = true;
-                    CrearBoton.MostrarError("El texto debe tener al menos 3 letras.");
-                }
-            };
+                // Cerrar este formulario
+                this.Close();
+                return false;
+            }
+            return true;
         }
 
-        private void CargarCategorias()
+        private void RealizarBusqueda()
         {
-            try
+            if (txtBuscar.Text == "BUSCAR CATEGORÍAS" || string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                flpCategorias.Controls.Clear();
-                var categorias = categoriaServicio.ObtenerTodas();
-
-                if (categorias == null || !categorias.Any())
-                    throw new InvalidOperationException("No se encontraron categorías.");
-
-                foreach (var cat in categorias)
-                {
-                    var btn = CrearBoton.CrearBotonCategoria(cat.Nombre, cat.ColorFondo);
-                    btn.Click += (s, e) => CrearBoton.MostrarInfo($"Seleccionaste: {cat.Nombre}");
-                    flpCategorias.Controls.Add(btn);
-                }
+                // Restaurar todas las categorías
+                _carruselManager.CargarCategorias();
+                _carruselManager.RestablecerCarrusel();
+                _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+                _carruselManager.CargarCategoriasMasSolicitadas(); // NUEVO: refrescar populares
+                return;
             }
-            catch (Exception ex)
-            {
-                CrearBoton.MostrarError($"Error al cargar categorías: {ex.Message}");
-            }
+
+            var textoBusqueda = txtBuscar.Text.Trim();
+            _carruselManager.BuscarCategorias(textoBusqueda, txtBuscar);
+            _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtBuscar.Text == "BUSCAR CATEGORÍAS" || string.IsNullOrWhiteSpace(txtBuscar.Text))
-                {
-                    CargarCategorias();
-                    return;
-                }
-
-                var resultados = categoriaServicio.Buscar(txtBuscar.Text.Trim());
-
-                flpCategorias.Controls.Clear();
-
-                if (!resultados.Any())
-                {
-                    CrearBoton.MostrarAdvertencia("No se encontraron categorías con ese nombre.");
-                    return;
-                }
-
-                foreach (var cat in resultados)
-                {
-                    var btn = CrearBoton.CrearBotonCategoria(cat.Nombre, cat.ColorFondo);
-                    flpCategorias.Controls.Add(btn);
-                }
-            }
-            catch (Exception ex)
-            {
-                CrearBoton.MostrarError($"Error en la búsqueda: {ex.Message}");
-            }
+            RealizarBusqueda();
         }
 
-        // EVENTOS PARA EL PANEL LATERAL
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void BtnAnterior_Click(object sender, EventArgs e)
         {
-            TogglePanelLateral();
+            _carruselManager.MoverAnterior();
         }
 
-        private void TogglePanelLateral()
+        private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            panelLateralVisible = !panelLateralVisible;
-            panelLateral.Visible = panelLateralVisible;
+            _carruselManager.MoverSiguiente();
+        }
 
-            // Traer el panel al frente cuando está visible
-            if (panelLateralVisible)
-                panelLateral.BringToFront();
+        // Resto de métodos permanecen iguales...
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_cerrandoParaPerfil)
+            {
+                _cerrandoParaPerfil = false;
+                return;
+            }
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // Verificar si estamos regresando intencionalmente a proveedor
+                bool regresandoAProveedor = UserSession.RolTemporal == "regresando_a_proveedor";
+
+                // Solo mostrar confirmación de cierre si NO estamos regresando a proveedor
+                if (!regresandoAProveedor)
+                {
+                    // Si viene de proveedor y cierra Form1, restaurar rol
+                    if (UserSession.EnVistaTemporalCliente())
+                    {
+                        UserSession.RestaurarRolOriginal();
+                    }
+
+                    // Solo preguntar por cerrar sesión si no está en modo temporal
+                    if (!UserSession.EnVistaTemporalCliente())
+                    {
+                        var resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?",
+                                                      "Cerrar Sesión",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                        if (resultado == DialogResult.Yes)
+                        {
+                            UserSession.CerrarSesion();
+                        }
+                        else
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                }
+
+                // Si estamos regresando a proveedor, limpiar la bandera temporal
+                if (regresandoAProveedor)
+                {
+                    UserSession.RolTemporal = "cliente_vista"; // Restaurar estado original
+                }
+            }
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
-            // Cerrar el panel si está abierto y se hace click fuera de él
-            if (panelLateralVisible && !panelLateral.Bounds.Contains(PointToClient(MousePosition)))
-            {
-                TogglePanelLateral();
-            }
+            _panelManager.CerrarPanelSiEsNecesario(this.PointToClient(MousePosition));
         }
 
-        private void btnVerPerfil_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // Cerrar el panel lateral
-            TogglePanelLateral();
-
-            // Abrir el formulario de perfil (lo crearás después)
-            AbrirFormularioPerfil();
+            _panelManager.TogglePanelLateral();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            if (!VerificarSesionActiva()) return;
+
             var resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?",
                                           "Cerrar Sesión",
                                           MessageBoxButtons.YesNo,
@@ -174,6 +215,47 @@ namespace Homepage
             }
         }
 
+        private void btnVerPerfil_Click(object sender, EventArgs e)
+        {
+            if (!VerificarSesionActiva()) return;
+
+            _panelManager.TogglePanelLateral();
+            AbrirFormularioPerfil();
+        }
+
+        private void AbrirFormularioPerfil()
+        {
+            try
+            {
+                _cerrandoParaPerfil = true;
+
+                PerfilForm perfilForm = new PerfilForm();
+                perfilForm.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                    this.Focus();
+
+                    // Refrescar datos si es necesario
+                    if (!_carruselManager.ModoBusqueda)
+                    {
+                        _carruselManager.CargarCategorias();
+                        _carruselManager.RestablecerCarrusel();
+                        _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+                        _carruselManager.CargarCategoriasMasSolicitadas(); // NUEVO: refrescar populares
+                    }
+                };
+
+                this.Hide();
+                perfilForm.Show();
+            }
+            catch (Exception ex)
+            {
+                _cerrandoParaPerfil = false;
+                MessageBox.Show($"Error al abrir el perfil: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
@@ -183,20 +265,70 @@ namespace Homepage
             }
         }
 
-
-        private void AbrirFormularioPerfil()
+        protected override void OnVisibleChanged(EventArgs e)
         {
-            try
+            base.OnVisibleChanged(e);
+
+            if (this.Visible && UserSession.SesionActiva)
             {
-                PerfilForm perfilForm = new PerfilForm();
-                perfilForm.FormClosed += (s, args) => this.Show(); // Mostrar Form1 cuando se cierre PerfilForm
-                this.Hide(); // Ocultar Form1
-                perfilForm.Show(); // Mostrar PerfilForm como formulario no modal
+                this.WindowState = FormWindowState.Normal;
+                this.BringToFront();
+                this.Focus();
             }
-            catch (Exception ex)
+        }
+
+        private void btnVolverProveedor_Click(object sender, EventArgs e)
+        {
+            _panelManager.TogglePanelLateral();
+
+            // Verificar si la sesión sigue activa
+            if (!UserSession.SesionActiva)
             {
-                MessageBox.Show($"Error al abrir el perfil: {ex.Message}", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La sesión ha expirado. Será redirigido al login.",
+                              "Sesión Expirada",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
+            // Usar el nuevo método para verificar permisos
+            if (UserSession.PuedeAccederAProveedor())
+            {
+                // AGREGAR CONFIRMACIÓN ANTES DE VOLVER
+                var resultado = MessageBox.Show("¿Desea volver al panel de proveedor?\n\n" +
+                                               "Regresará a la gestión de sus servicios y estadísticas.",
+                                               "Volver a Proveedor",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Marcar que estamos regresando intencionalmente
+                    UserSession.RolTemporal = "regresando_a_proveedor";
+                    this.Close(); // Cierra Form1 y vuelve a Proveedor
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe iniciar sesión con una cuenta de proveedor para acceder al panel de proveedor.\n\n" +
+                               "Si es proveedor, cierre sesión e inicie con su cuenta de empleado.",
+                               "Acceso Restringido",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Navegación con teclado
+            if (e.KeyCode == Keys.Left)
+            {
+                BtnAnterior_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                BtnSiguiente_Click(sender, e);
             }
         }
     }
