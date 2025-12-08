@@ -1,4 +1,14 @@
-﻿namespace Homepage
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Homepage
 {
     partial class Form1
     {
@@ -30,6 +40,7 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -47,14 +58,26 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.lblPagina = new System.Windows.Forms.Label();
             this.lblRango = new System.Windows.Forms.Label();
+            this.tabControlPrincipal = new System.Windows.Forms.TabControl();
+            this.tabPageHome = new System.Windows.Forms.TabPage();
+            this.tabPageCategorias = new System.Windows.Forms.TabPage();
+            this.btnVolverHome = new System.Windows.Forms.Button();
+            this.lblDenominaciones = new System.Windows.Forms.Label();
+            this.flpDenominaciones = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblServicios = new System.Windows.Forms.Label();
+            this.flpServicios = new System.Windows.Forms.FlowLayoutPanel();
             this.menuPrincipal.SuspendLayout();
             this.panelLateral.SuspendLayout();
+            this.tabControlPrincipal.SuspendLayout();
+            this.tabPageHome.SuspendLayout();
+            this.tabPageCategorias.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPrincipal
             // 
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.menuItemCategorias});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(1040, 29);
@@ -69,35 +92,44 @@
             this.toolStripMenuItem1.Text = "Menú";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
+            // menuItemCategorias
+            // 
+            this.menuItemCategorias.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.menuItemCategorias.Name = "menuItemCategorias";
+            this.menuItemCategorias.Size = new System.Drawing.Size(98, 25);
+            this.menuItemCategorias.Text = "Categorías";
+            this.menuItemCategorias.Click += new System.EventHandler(this.MenuItemCategorias_Click);
+            // 
             // lblBienvenida
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(12, 35); // MANTENER
+            this.lblBienvenida.Location = new System.Drawing.Point(12, 35);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(272, 55);
             this.lblBienvenida.TabIndex = 1;
             this.lblBienvenida.Text = "Bienvenido";
-            //
-            // txtBuscar - Mover más a la derecha
-            //
+            // 
+            // txtBuscar
+            // 
             this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscar.Location = new System.Drawing.Point(650, 55); // Cambiado de 340 a 700
+            this.txtBuscar.Location = new System.Drawing.Point(650, 55);
             this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(253, 20);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.Text = "BUSCAR CATEGORÍAS";
-            //
-            // btnBuscar - Mover más a la derecha
-            //
+            // 
+            // btnBuscar
+            // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(920, 45); // Cambiado de 616 a 976
+            this.btnBuscar.Location = new System.Drawing.Point(920, 45);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(96, 37);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // flpCategorias
             // 
@@ -244,6 +276,7 @@
             this.btnAnterior.TabIndex = 9;
             this.btnAnterior.Text = "◀";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.BtnAnterior_Click);
             // 
             // btnSiguiente
             // 
@@ -254,6 +287,7 @@
             this.btnSiguiente.TabIndex = 10;
             this.btnSiguiente.Text = "▶";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
             // 
             // lblPagina
             // 
@@ -278,24 +312,104 @@
             this.lblRango.Text = "IDs: 1 - 7";
             this.lblRango.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabControlPrincipal
+            // 
+            this.tabControlPrincipal.Controls.Add(this.tabPageHome);
+            this.tabControlPrincipal.Controls.Add(this.tabPageCategorias);
+            this.tabControlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPrincipal.Location = new System.Drawing.Point(0, 29);
+            this.tabControlPrincipal.Name = "tabControlPrincipal";
+            this.tabControlPrincipal.SelectedIndex = 0;
+            this.tabControlPrincipal.Size = new System.Drawing.Size(1040, 616);
+            this.tabControlPrincipal.TabIndex = 13;
+            // 
+            // tabPageHome
+            // 
+            this.tabPageHome.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageHome.Controls.Add(this.lblBienvenida);
+            this.tabPageHome.Controls.Add(this.txtBuscar);
+            this.tabPageHome.Controls.Add(this.btnBuscar);
+            this.tabPageHome.Controls.Add(this.flpCategorias);
+            this.tabPageHome.Controls.Add(this.lblSolicitados);
+            this.tabPageHome.Controls.Add(this.tlpSolicitados);
+            this.tabPageHome.Controls.Add(this.lblCategorias);
+            this.tabPageHome.Controls.Add(this.panelLateral);
+            this.tabPageHome.Controls.Add(this.btnAnterior);
+            this.tabPageHome.Controls.Add(this.btnSiguiente);
+            this.tabPageHome.Controls.Add(this.lblPagina);
+            this.tabPageHome.Controls.Add(this.lblRango);
+            this.tabPageHome.Location = new System.Drawing.Point(4, 22);
+            this.tabPageHome.Name = "tabPageHome";
+            this.tabPageHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHome.Size = new System.Drawing.Size(1032, 590);
+            this.tabPageHome.TabIndex = 0;
+            this.tabPageHome.Text = "Inicio";
+            // 
+            // tabPageCategorias
+            // 
+            this.tabPageCategorias.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageCategorias.Controls.Add(this.btnVolverHome);
+            this.tabPageCategorias.Controls.Add(this.lblDenominaciones);
+            this.tabPageCategorias.Controls.Add(this.flpDenominaciones);
+            this.tabPageCategorias.Controls.Add(this.lblServicios);
+            this.tabPageCategorias.Controls.Add(this.flpServicios);
+            this.tabPageCategorias.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCategorias.Name = "tabPageCategorias";
+            this.tabPageCategorias.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCategorias.Size = new System.Drawing.Size(1032, 590);
+            this.tabPageCategorias.TabIndex = 1;
+            this.tabPageCategorias.Text = "Categorías";
+            // 
+            // btnVolverHome
+            // 
+            this.btnVolverHome.Location = new System.Drawing.Point(20, 20);
+            this.btnVolverHome.Name = "btnVolverHome";
+            this.btnVolverHome.Size = new System.Drawing.Size(100, 30);
+            this.btnVolverHome.TabIndex = 0;
+            this.btnVolverHome.Text = "← Volver";
+            this.btnVolverHome.UseVisualStyleBackColor = true;
+            this.btnVolverHome.Click += new System.EventHandler(this.btnVolverHome_Click);
+            // 
+            // lblDenominaciones
+            // 
+            this.lblDenominaciones.AutoSize = true;
+            this.lblDenominaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDenominaciones.Location = new System.Drawing.Point(20, 70);
+            this.lblDenominaciones.Name = "lblDenominaciones";
+            this.lblDenominaciones.Size = new System.Drawing.Size(180, 26);
+            this.lblDenominaciones.TabIndex = 1;
+            this.lblDenominaciones.Text = "Denominaciones";
+            // 
+            // flpDenominaciones
+            // 
+            this.flpDenominaciones.Location = new System.Drawing.Point(20, 100);
+            this.flpDenominaciones.Name = "flpDenominaciones";
+            this.flpDenominaciones.Size = new System.Drawing.Size(800, 150);
+            this.flpDenominaciones.TabIndex = 2;
+            // 
+            // lblServicios
+            // 
+            this.lblServicios.AutoSize = true;
+            this.lblServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblServicios.Location = new System.Drawing.Point(20, 270);
+            this.lblServicios.Name = "lblServicios";
+            this.lblServicios.Size = new System.Drawing.Size(106, 26);
+            this.lblServicios.TabIndex = 3;
+            this.lblServicios.Text = "Servicios";
+            // 
+            // flpServicios
+            // 
+            this.flpServicios.Location = new System.Drawing.Point(20, 300);
+            this.flpServicios.Name = "flpServicios";
+            this.flpServicios.Size = new System.Drawing.Size(800, 250);
+            this.flpServicios.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 645);
-            this.Controls.Add(this.lblRango);
-            this.Controls.Add(this.lblPagina);
-            this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.panelLateral);
-            this.Controls.Add(this.lblCategorias);
-            this.Controls.Add(this.tlpSolicitados);
-            this.Controls.Add(this.lblSolicitados);
-            this.Controls.Add(this.flpCategorias);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.lblBienvenida);
-            this.Controls.Add(this.menuPrincipal);
+            this.Controls.Add(this.tabControlPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,6 +418,11 @@
             this.menuPrincipal.PerformLayout();
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
+            this.tabControlPrincipal.ResumeLayout(false);
+            this.tabPageHome.ResumeLayout(false);
+            this.tabPageHome.PerformLayout();
+            this.tabPageCategorias.ResumeLayout(false);
+            this.tabPageCategorias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +449,14 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label lblPagina;
         private System.Windows.Forms.Label lblRango;
+        private System.Windows.Forms.ToolStripMenuItem menuItemCategorias;
+        private System.Windows.Forms.TabControl tabControlPrincipal;
+        private System.Windows.Forms.TabPage tabPageHome;
+        private System.Windows.Forms.TabPage tabPageCategorias;
+        private System.Windows.Forms.Button btnVolverHome;
+        private System.Windows.Forms.Label lblDenominaciones;
+        private System.Windows.Forms.FlowLayoutPanel flpDenominaciones;
+        private System.Windows.Forms.Label lblServicios;
+        private System.Windows.Forms.FlowLayoutPanel flpServicios;
     }
 }
