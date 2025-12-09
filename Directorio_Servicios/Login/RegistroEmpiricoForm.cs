@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LoginDirectorio.RegistroFases;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using LoginDirectorio.RegistroFases;
 
 namespace LoginDirectorio
 {
@@ -85,24 +86,74 @@ namespace LoginDirectorio
 
         private void SubirArchivo(object sender, string categoria)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog
+            // LISTA BLANCA ESTRICTA
+            var tiposPermitidos = new Dictionary<string, string>
             {
-                Filter = "Archivos permitidos|*.pdf;*.jpg;*.png",
-                Multiselect = true
-            })
+                { ".pdf", "application/pdf" },
+                { ".jpg", "image/jpeg" },
+                { ".jpeg", "image/jpeg" },
+                { ".png", "image/png" },
+                { ".doc", "application/msword" },
+                { ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
+                { ".txt", "text/plain" }
+            };
+
+            using (OpenFileDialog ofd = new OpenFileDialog())
             {
+                // Crear filtro solo con extensiones permitidas
+                string filtro = $"Archivos permitidos|{string.Join(";", tiposPermitidos.Keys.Select(k => $"*{k}"))}";
+                ofd.Filter = filtro;
+                ofd.Multiselect = true;
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    List<string> errores = new List<string>();
+
                     foreach (string file in ofd.FileNames)
                     {
-                        byte[] bytes = File.ReadAllBytes(file);
-                        archivosBytes.Add(bytes);
-                        nombresArchivos.Add(Path.GetFileName(file));
-                        tiposArchivos.Add(Path.GetExtension(file).ToLower() == ".pdf" ? "application/pdf" : "image/" + Path.GetExtension(file).Substring(1));
-                        categoriasArchivos.Add(categoria);
+                        string extension = Path.GetExtension(file).ToLower();
+
+                        // VALIDACIÓN PRINCIPAL: ¿Está en la lista blanca?
+                        if (!tiposPermitidos.ContainsKey(extension))
+                        {
+                            errores.Add($"{Path.GetFileName(file)}: Extensión '{extension}' no permitida");
+                            continue;
+                        }
+
+                        // VALIDACIÓN DE TAMAÑO (10MB máximo)
+                        FileInfo fi = new FileInfo(file);
+                        if (fi.Length > 10 * 1024 * 1024)
+                        {
+                            errores.Add($"{Path.GetFileName(file)}: Excede 10MB");
+                            continue;
+                        }
+
+                        try
+                        {
+                            // PROCESAR ARCHIVO VÁLIDO
+                            byte[] bytes = File.ReadAllBytes(file);
+                            archivosBytes.Add(bytes);
+                            nombresArchivos.Add(Path.GetFileName(file));
+                            tiposArchivos.Add(tiposPermitidos[extension]);
+                            categoriasArchivos.Add(categoria);
+                        }
+                        catch
+                        {
+                            errores.Add($"{Path.GetFileName(file)}: Error al leer");
+                        }
                     }
-                    MessageBox.Show($"Archivos subidos: {ofd.FileNames.Length}", "Éxito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Mostrar resultados
+                    if (errores.Count == 0)
+                    {
+                        MessageBox.Show("Todos los archivos se subieron correctamente",
+                            "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Se subieron {ofd.FileNames.Length - errores.Count} de {ofd.FileNames.Length} archivos.\n\nErrores:\n{string.Join("\n", errores)}",
+                            "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
