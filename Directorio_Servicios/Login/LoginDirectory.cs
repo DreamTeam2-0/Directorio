@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +23,49 @@ namespace LoginDirectorio
         {
             InitializeComponent();
             dbHelper = new DatabaseHelper();
+
+            CargarLogotipo();
+        }
+
+        private void CargarLogotipo()
+        {
+            try
+            {
+                // Usa la ruta completa o relativa según donde esté tu proyecto
+                string rutaImagen = @"C:\Users\ROG STRIX\Downloads\logo2.png"; // Ruta completa
+                                                                               // O si quieres usar una ruta relativa:
+                                                                               // string rutaImagen = Path.Combine(Application.StartupPath, "Resources", "logo2.png");
+
+                if (System.IO.File.Exists(rutaImagen))
+                {
+                    pictureBoxLogo.Image = Image.FromFile(rutaImagen);
+                    pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom; // Mantener proporciones
+                }
+                else
+                {
+                    MessageBox.Show($"No se encontró la imagen en: {rutaImagen}\nMostrando texto alternativo.",
+                                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Mostrar texto alternativo si no se encuentra la imagen
+                    pictureBoxLogo.Image?.Dispose();
+                    pictureBoxLogo.Image = null;
+
+                    // Crear una etiqueta temporal
+                    using (Graphics g = pictureBoxLogo.CreateGraphics())
+                    {
+                        g.Clear(Color.White);
+                        g.DrawString("LOGO",
+                                     new Font("Arial", 16, FontStyle.Bold),
+                                     Brushes.Green,
+                                     new PointF(10, 40));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el logotipo: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
