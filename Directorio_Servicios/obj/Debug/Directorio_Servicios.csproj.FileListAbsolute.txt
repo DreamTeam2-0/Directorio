@@ -1,3 +1,9 @@
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.LoginDirectory.resources
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.RegistroFases.SubirArchivoEventArgs.resources
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.Properties.Resources.resources
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.GenerateResource.cache
+C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.CoreCompileInputs.cache
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\Directorio_Servicios.exe.config
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\Directorio_Servicios.exe
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\Directorio_Servicios.pdb
@@ -31,13 +37,6 @@ C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\De
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.AssemblyReference.cache
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Homepage.Form1.resources
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.LoginDirectory.resources
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\LoginDirectorio.RegistroFases.SubirArchivoEventArgs.resources
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.Properties.Resources.resources
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.GenerateResource.cache
-C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.csproj.CoreCompileInputs.cache
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Director.3439CFAF.Up2Date
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.exe
 C:\Users\ROG STRIX\source\repos\Directorio_Servicios\Directorio_Servicios\obj\Debug\Directorio_Servicios.pdb

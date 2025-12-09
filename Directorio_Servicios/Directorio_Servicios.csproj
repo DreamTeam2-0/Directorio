@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Homepage\Logica\BuscadorManager.cs" />
     <Compile Include="Homepage\Logica\CarruselManger.cs" />
+    <Compile Include="Homepage\Logica\CategoriaManager.cs" />
     <Compile Include="Homepage\Logica\CategoriaServicio.cs" />
     <Compile Include="Homepage\Logica\FranjaManager.cs" />
     <Compile Include="Homepage\Logica\PanelManager.cs" />
@@ -181,6 +182,12 @@
     <Compile Include="Login\RegistroProveedorForm.Designer.cs">
       <DependentUpon>RegistroProveedorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\SeleccionRegistroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\SeleccionRegistroForm.Designer.cs">
+      <DependentUpon>SeleccionRegistroForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Perfil\EditarServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +215,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Homepage\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginDirectory.resx">
       <DependentUpon>LoginDirectory.cs</DependentUpon>
     </EmbeddedResource>
