@@ -183,6 +183,8 @@ namespace Perfil
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(260, 20);
             this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            
             // 
             // txtWhatsapp
             // 
@@ -191,6 +193,7 @@ namespace Perfil
             this.txtWhatsapp.ReadOnly = true;
             this.txtWhatsapp.Size = new System.Drawing.Size(260, 20);
             this.txtWhatsapp.TabIndex = 6;
+            this.txtWhatsapp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWhatsapp_KeyPress);
             // 
             // txtCorreo
             // 

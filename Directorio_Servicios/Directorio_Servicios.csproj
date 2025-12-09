@@ -125,7 +125,19 @@
     <Compile Include="Homepage\ProveedorHome\Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homepage\UI\CalificarServicioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\UI\CalificarServicioForm.Designer.cs">
+      <DependentUpon>CalificarServicioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage\UI\CrearBoton.cs" />
+    <Compile Include="Homepage\UI\DetalleServicioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\UI\DetalleServicioForm.Designer.cs">
+      <DependentUpon>DetalleServicioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\DBHelp\DatabaseHelper.cs" />
     <Compile Include="Login\LoginDirectory.cs">
       <SubType>Form</SubType>
