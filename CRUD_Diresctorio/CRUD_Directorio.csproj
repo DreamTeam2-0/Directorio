@@ -107,6 +107,19 @@
     <Compile Include="CRUD\CrudTabPage.Designer.cs">
       <DependentUpon>CrudTabPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CRUD\CRUD_System\CrudAccionesSistema.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudArchivosGenerales.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudArchivosProveedor.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudCalificaciones.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudCategorias.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudDatosUsuario.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudDenominaciones.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudExperienciaUsuario.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudRoles.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudServicios.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudUsuarios.cs" />
+    <Compile Include="CRUD\CRUD_System\CrudUsuariosSistema.cs" />
+    <Compile Include="CRUD\CRUD_System\HashHelper.cs" />
     <Compile Include="DataBase\BDConector.cs" />
     <Compile Include="DataBase\DatabaseHelper.cs" />
     <Compile Include="DataBase\UserSession.cs" />

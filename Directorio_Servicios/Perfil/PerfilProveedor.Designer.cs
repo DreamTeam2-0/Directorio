@@ -6,7 +6,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabDatosPersonales;
         private System.Windows.Forms.TabPage tabExperiencia;
-        private System.Windows.Forms.TabPage tabEspecialidades;
 
         // Datos Personales
         private System.Windows.Forms.Label lblNombres;
@@ -48,15 +47,6 @@
         private System.Windows.Forms.Label lblDescripcionOtro;
         private System.Windows.Forms.TextBox txtDescripcionOtro;
 
-        // Especialidades
-        private System.Windows.Forms.ListBox lbCategorias;
-        private System.Windows.Forms.Label lblCategorias;
-        private System.Windows.Forms.Button btnAgregarCategoria;
-        private System.Windows.Forms.Label lblHerramientas;
-        private System.Windows.Forms.TextBox txtHerramientas;
-        private System.Windows.Forms.Label lblDescripcionServicios;
-        private System.Windows.Forms.TextBox txtDescripcionServicios;
-
         // Botones
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
@@ -76,7 +66,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDatosPersonales = new System.Windows.Forms.TabPage();
             this.tabExperiencia = new System.Windows.Forms.TabPage();
-            this.tabEspecialidades = new System.Windows.Forms.TabPage();
             this.lblNombres = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
@@ -113,13 +102,6 @@
             this.txtProyectosDestacados = new System.Windows.Forms.TextBox();
             this.lblReferencias = new System.Windows.Forms.Label();
             this.txtReferencias = new System.Windows.Forms.TextBox();
-            this.lbCategorias = new System.Windows.Forms.ListBox();
-            this.lblCategorias = new System.Windows.Forms.Label();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
-            this.lblHerramientas = new System.Windows.Forms.Label();
-            this.txtHerramientas = new System.Windows.Forms.TextBox();
-            this.lblDescripcionServicios = new System.Windows.Forms.Label();
-            this.txtDescripcionServicios = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -127,19 +109,17 @@
             this.tabExperiencia.SuspendLayout();
             this.pnlCertificado.SuspendLayout();
             this.pnlEmpirico.SuspendLayout();
-            this.tabEspecialidades.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabDatosPersonales);
             this.tabControl1.Controls.Add(this.tabExperiencia);
-            this.tabControl1.Controls.Add(this.tabEspecialidades);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 500);
+            this.tabControl1.Size = new System.Drawing.Size(600, 400);
             this.tabControl1.TabIndex = 0;
             // 
             // tabDatosPersonales
@@ -166,7 +146,7 @@
             this.tabDatosPersonales.Location = new System.Drawing.Point(4, 22);
             this.tabDatosPersonales.Name = "tabDatosPersonales";
             this.tabDatosPersonales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatosPersonales.Size = new System.Drawing.Size(792, 474);
+            this.tabDatosPersonales.Size = new System.Drawing.Size(592, 374);
             this.tabDatosPersonales.TabIndex = 0;
             this.tabDatosPersonales.Text = "Datos Personales";
             // 
@@ -188,26 +168,9 @@
             this.tabExperiencia.Location = new System.Drawing.Point(4, 22);
             this.tabExperiencia.Name = "tabExperiencia";
             this.tabExperiencia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExperiencia.Size = new System.Drawing.Size(792, 474);
+            this.tabExperiencia.Size = new System.Drawing.Size(592, 374);
             this.tabExperiencia.TabIndex = 1;
             this.tabExperiencia.Text = "Experiencia Profesional";
-            // 
-            // tabEspecialidades
-            // 
-            this.tabEspecialidades.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabEspecialidades.Controls.Add(this.txtDescripcionServicios);
-            this.tabEspecialidades.Controls.Add(this.lblDescripcionServicios);
-            this.tabEspecialidades.Controls.Add(this.txtHerramientas);
-            this.tabEspecialidades.Controls.Add(this.lblHerramientas);
-            this.tabEspecialidades.Controls.Add(this.btnAgregarCategoria);
-            this.tabEspecialidades.Controls.Add(this.lbCategorias);
-            this.tabEspecialidades.Controls.Add(this.lblCategorias);
-            this.tabEspecialidades.Location = new System.Drawing.Point(4, 22);
-            this.tabEspecialidades.Name = "tabEspecialidades";
-            this.tabEspecialidades.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEspecialidades.Size = new System.Drawing.Size(792, 474);
-            this.tabEspecialidades.TabIndex = 2;
-            this.tabEspecialidades.Text = "Especialidades";
             // 
             // lblNombres
             // 
@@ -351,14 +314,14 @@
             this.txtZonasServicio.Location = new System.Drawing.Point(150, 307);
             this.txtZonasServicio.Multiline = true;
             this.txtZonasServicio.Name = "txtZonasServicio";
-            this.txtZonasServicio.Size = new System.Drawing.Size(300, 60);
+            this.txtZonasServicio.Size = new System.Drawing.Size(300, 50);
             this.txtZonasServicio.TabIndex = 15;
             // 
             // lblOtroContacto
             // 
             this.lblOtroContacto.AutoSize = true;
             this.lblOtroContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblOtroContacto.Location = new System.Drawing.Point(30, 390);
+            this.lblOtroContacto.Location = new System.Drawing.Point(400, 30);
             this.lblOtroContacto.Name = "lblOtroContacto";
             this.lblOtroContacto.Size = new System.Drawing.Size(114, 17);
             this.lblOtroContacto.TabIndex = 16;
@@ -367,9 +330,9 @@
             // txtOtroContacto
             // 
             this.txtOtroContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtOtroContacto.Location = new System.Drawing.Point(150, 387);
+            this.txtOtroContacto.Location = new System.Drawing.Point(520, 27);
             this.txtOtroContacto.Name = "txtOtroContacto";
-            this.txtOtroContacto.Size = new System.Drawing.Size(250, 23);
+            this.txtOtroContacto.Size = new System.Drawing.Size(200, 23);
             this.txtOtroContacto.TabIndex = 17;
             // 
             // rbCertificado
@@ -405,7 +368,7 @@
             this.pnlCertificado.Controls.Add(this.lblNivelEstudios);
             this.pnlCertificado.Location = new System.Drawing.Point(250, 20);
             this.pnlCertificado.Name = "pnlCertificado";
-            this.pnlCertificado.Size = new System.Drawing.Size(500, 100);
+            this.pnlCertificado.Size = new System.Drawing.Size(320, 80);
             this.pnlCertificado.TabIndex = 2;
             this.pnlCertificado.Visible = true;
             // 
@@ -416,7 +379,7 @@
             this.cbNivelEstudios.FormattingEnabled = true;
             this.cbNivelEstudios.Location = new System.Drawing.Point(150, 30);
             this.cbNivelEstudios.Name = "cbNivelEstudios";
-            this.cbNivelEstudios.Size = new System.Drawing.Size(200, 24);
+            this.cbNivelEstudios.Size = new System.Drawing.Size(150, 24);
             this.cbNivelEstudios.TabIndex = 1;
             // 
             // lblNivelEstudios
@@ -436,9 +399,9 @@
             this.pnlEmpirico.Controls.Add(this.lblDescripcionOtro);
             this.pnlEmpirico.Controls.Add(this.txtTipoExperiencia);
             this.pnlEmpirico.Controls.Add(this.lblTipoExperiencia);
-            this.pnlEmpirico.Location = new System.Drawing.Point(250, 60);
+            this.pnlEmpirico.Location = new System.Drawing.Point(250, 20);
             this.pnlEmpirico.Name = "pnlEmpirico";
-            this.pnlEmpirico.Size = new System.Drawing.Size(500, 150);
+            this.pnlEmpirico.Size = new System.Drawing.Size(320, 150);
             this.pnlEmpirico.TabIndex = 3;
             this.pnlEmpirico.Visible = false;
             // 
@@ -448,7 +411,7 @@
             this.txtDescripcionOtro.Location = new System.Drawing.Point(150, 80);
             this.txtDescripcionOtro.Multiline = true;
             this.txtDescripcionOtro.Name = "txtDescripcionOtro";
-            this.txtDescripcionOtro.Size = new System.Drawing.Size(320, 50);
+            this.txtDescripcionOtro.Size = new System.Drawing.Size(150, 50);
             this.txtDescripcionOtro.TabIndex = 3;
             // 
             // lblDescripcionOtro
@@ -466,7 +429,7 @@
             this.txtTipoExperiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTipoExperiencia.Location = new System.Drawing.Point(150, 30);
             this.txtTipoExperiencia.Name = "txtTipoExperiencia";
-            this.txtTipoExperiencia.Size = new System.Drawing.Size(200, 23);
+            this.txtTipoExperiencia.Size = new System.Drawing.Size(150, 23);
             this.txtTipoExperiencia.TabIndex = 1;
             // 
             // lblTipoExperiencia
@@ -513,14 +476,14 @@
             this.txtEmpresasAnteriores.Location = new System.Drawing.Point(200, 227);
             this.txtEmpresasAnteriores.Multiline = true;
             this.txtEmpresasAnteriores.Name = "txtEmpresasAnteriores";
-            this.txtEmpresasAnteriores.Size = new System.Drawing.Size(400, 60);
+            this.txtEmpresasAnteriores.Size = new System.Drawing.Size(350, 50);
             this.txtEmpresasAnteriores.TabIndex = 7;
             // 
             // lblProyectosDestacados
             // 
             this.lblProyectosDestacados.AutoSize = true;
             this.lblProyectosDestacados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblProyectosDestacados.Location = new System.Drawing.Point(30, 310);
+            this.lblProyectosDestacados.Location = new System.Drawing.Point(30, 290);
             this.lblProyectosDestacados.Name = "lblProyectosDestacados";
             this.lblProyectosDestacados.Size = new System.Drawing.Size(164, 17);
             this.lblProyectosDestacados.TabIndex = 8;
@@ -529,17 +492,17 @@
             // txtProyectosDestacados
             // 
             this.txtProyectosDestacados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtProyectosDestacados.Location = new System.Drawing.Point(200, 307);
+            this.txtProyectosDestacados.Location = new System.Drawing.Point(200, 287);
             this.txtProyectosDestacados.Multiline = true;
             this.txtProyectosDestacados.Name = "txtProyectosDestacados";
-            this.txtProyectosDestacados.Size = new System.Drawing.Size(400, 60);
+            this.txtProyectosDestacados.Size = new System.Drawing.Size(350, 50);
             this.txtProyectosDestacados.TabIndex = 9;
             // 
             // lblReferencias
             // 
             this.lblReferencias.AutoSize = true;
             this.lblReferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblReferencias.Location = new System.Drawing.Point(30, 390);
+            this.lblReferencias.Location = new System.Drawing.Point(30, 350);
             this.lblReferencias.Name = "lblReferencias";
             this.lblReferencias.Size = new System.Drawing.Size(139, 17);
             this.lblReferencias.TabIndex = 10;
@@ -548,84 +511,11 @@
             // txtReferencias
             // 
             this.txtReferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtReferencias.Location = new System.Drawing.Point(200, 387);
+            this.txtReferencias.Location = new System.Drawing.Point(200, 347);
             this.txtReferencias.Multiline = true;
             this.txtReferencias.Name = "txtReferencias";
-            this.txtReferencias.Size = new System.Drawing.Size(400, 60);
+            this.txtReferencias.Size = new System.Drawing.Size(350, 50);
             this.txtReferencias.TabIndex = 11;
-            // 
-            // lbCategorias
-            // 
-            this.lbCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbCategorias.FormattingEnabled = true;
-            this.lbCategorias.ItemHeight = 16;
-            this.lbCategorias.Location = new System.Drawing.Point(30, 50);
-            this.lbCategorias.Name = "lbCategorias";
-            this.lbCategorias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbCategorias.Size = new System.Drawing.Size(350, 180);
-            this.lbCategorias.TabIndex = 0;
-            // 
-            // lblCategorias
-            // 
-            this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCategorias.Location = new System.Drawing.Point(30, 30);
-            this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Size = new System.Drawing.Size(166, 17);
-            this.lblCategorias.TabIndex = 1;
-            this.lblCategorias.Text = "Categorías de Servicio:";
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.BackColor = System.Drawing.Color.FromArgb(76, 175, 80);
-            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(30, 240);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(150, 30);
-            this.btnAgregarCategoria.TabIndex = 2;
-            this.btnAgregarCategoria.Text = "Seleccionar Todo";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = false;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
-            // 
-            // lblHerramientas
-            // 
-            this.lblHerramientas.AutoSize = true;
-            this.lblHerramientas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblHerramientas.Location = new System.Drawing.Point(400, 30);
-            this.lblHerramientas.Name = "lblHerramientas";
-            this.lblHerramientas.Size = new System.Drawing.Size(105, 17);
-            this.lblHerramientas.TabIndex = 3;
-            this.lblHerramientas.Text = "Herramientas:";
-            // 
-            // txtHerramientas
-            // 
-            this.txtHerramientas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtHerramientas.Location = new System.Drawing.Point(400, 50);
-            this.txtHerramientas.Multiline = true;
-            this.txtHerramientas.Name = "txtHerramientas";
-            this.txtHerramientas.Size = new System.Drawing.Size(350, 100);
-            this.txtHerramientas.TabIndex = 4;
-            // 
-            // lblDescripcionServicios
-            // 
-            this.lblDescripcionServicios.AutoSize = true;
-            this.lblDescripcionServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDescripcionServicios.Location = new System.Drawing.Point(400, 170);
-            this.lblDescripcionServicios.Name = "lblDescripcionServicios";
-            this.lblDescripcionServicios.Size = new System.Drawing.Size(162, 17);
-            this.lblDescripcionServicios.TabIndex = 5;
-            this.lblDescripcionServicios.Text = "Descripción Servicios:";
-            // 
-            // txtDescripcionServicios
-            // 
-            this.txtDescripcionServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescripcionServicios.Location = new System.Drawing.Point(400, 190);
-            this.txtDescripcionServicios.Multiline = true;
-            this.txtDescripcionServicios.Name = "txtDescripcionServicios";
-            this.txtDescripcionServicios.Size = new System.Drawing.Size(350, 150);
-            this.txtDescripcionServicios.TabIndex = 6;
             // 
             // btnGuardar
             // 
@@ -633,7 +523,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(550, 510);
+            this.btnGuardar.Location = new System.Drawing.Point(350, 410);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 40);
             this.btnGuardar.TabIndex = 1;
@@ -646,7 +536,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Silver;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnCancelar.Location = new System.Drawing.Point(680, 510);
+            this.btnCancelar.Location = new System.Drawing.Point(480, 410);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 40);
             this.btnCancelar.TabIndex = 2;
@@ -654,20 +544,19 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // EditarDatosProveedorForm
+            // PerfilProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 560);
+            this.ClientSize = new System.Drawing.Size(600, 460);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditarDatosProveedorForm";
+            this.Name = "PerfilProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Datos de Proveedor";
             this.Load += new System.EventHandler(this.EditarDatosProveedorForm_Load);
@@ -680,10 +569,7 @@
             this.pnlCertificado.PerformLayout();
             this.pnlEmpirico.ResumeLayout(false);
             this.pnlEmpirico.PerformLayout();
-            this.tabEspecialidades.ResumeLayout(false);
-            this.tabEspecialidades.PerformLayout();
             this.ResumeLayout(false);
-
         }
     }
 }

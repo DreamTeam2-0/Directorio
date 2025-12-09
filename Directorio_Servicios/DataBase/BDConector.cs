@@ -1,18 +1,18 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace DataBase
 {
     public class BDConector : IDisposable
     {
-        private MySqlConnection _connection;
+        public MySqlConnection _connection { get; private set; }
         private const string ConnectionString = "Server=localhost;Database=directorio_servicios;Uid=root;Pwd=Shadow27#;Port=3306;";
 
         public BDConector()
         {
             _connection = new MySqlConnection(ConnectionString);
+            Open(); // Abrir automáticamente al crear
         }
 
         public void Open()
@@ -35,7 +35,8 @@ namespace DataBase
         {
             using (var command = new MySqlCommand(query, _connection))
             {
-                command.Parameters.AddRange(parameters);
+                if (parameters != null)
+                    command.Parameters.AddRange(parameters);
                 return command.ExecuteReader();
             }
         }
@@ -44,7 +45,8 @@ namespace DataBase
         {
             using (var command = new MySqlCommand(query, _connection))
             {
-                command.Parameters.AddRange(parameters);
+                if (parameters != null)
+                    command.Parameters.AddRange(parameters);
                 return command.ExecuteNonQuery();
             }
         }
@@ -53,13 +55,23 @@ namespace DataBase
         {
             using (var command = new MySqlCommand(query, _connection))
             {
-                command.Parameters.AddRange(parameters);
+                if (parameters != null)
+                    command.Parameters.AddRange(parameters);
                 return command.ExecuteScalar();
             }
         }
 
+        // Método estático para obtener una conexión (para compatibilidad con código existente)
+        public static MySqlConnection ObtenerConexion()
+        {
+            var conexion = new MySqlConnection(ConnectionString);
+            conexion.Open();
+            return conexion;
+        }
+
         public void Dispose()
         {
+            Close();
             _connection?.Dispose();
         }
     }

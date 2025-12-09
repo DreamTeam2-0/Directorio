@@ -25,7 +25,7 @@
             this.btnCambiarCliente = new System.Windows.Forms.Button();
             this.btnEditarDatos = new System.Windows.Forms.Button();
             this.btnEditarServicios = new System.Windows.Forms.Button();
-            this.btnVerPerfil = new System.Windows.Forms.Button();
+            
             this.lblMenuTitulo = new System.Windows.Forms.Label();
             this.panelEstadisticas = new System.Windows.Forms.Panel();
             this.lblClientesAtendidos = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.panelLateral.Controls.Add(this.btnCambiarCliente);
             this.panelLateral.Controls.Add(this.btnEditarDatos);
             this.panelLateral.Controls.Add(this.btnEditarServicios);
-            this.panelLateral.Controls.Add(this.btnVerPerfil);
+            //this.panelLateral.Controls.Add(this.btnVerPerfil);
             this.panelLateral.Controls.Add(this.lblMenuTitulo);
             this.panelLateral.Location = new System.Drawing.Point(0, 29);
             this.panelLateral.Name = "panelLateral";
@@ -120,23 +120,6 @@
             this.btnCambiarCliente.Text = "Cambiar a Cliente";
             this.btnCambiarCliente.UseVisualStyleBackColor = false;
             this.btnCambiarCliente.Click += new System.EventHandler(this.btnCambiarCliente_Click);
-            // 
-            // btnVerPerfil
-            this.btnVerPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.btnVerPerfil.FlatAppearance.BorderSize = 0;
-            this.btnVerPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnVerPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnVerPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPerfil.ForeColor = System.Drawing.Color.White;
-            this.btnVerPerfil.Location = new System.Drawing.Point(0, 130);
-            this.btnVerPerfil.Name = "btnVerPerfil";
-            this.btnVerPerfil.Size = new System.Drawing.Size(300, 50);
-            this.btnVerPerfil.TabIndex = 1;
-            this.btnVerPerfil.Text = "Ver Perfil Público";
-            this.btnVerPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerPerfil.UseVisualStyleBackColor = false;
-            this.btnVerPerfil.Click += new System.EventHandler(this.btnVerPerfil_Click);
             // 
             // btnEditarServicios
             this.btnEditarServicios.BackColor = System.Drawing.Color.Transparent;
@@ -335,7 +318,7 @@
         private System.Windows.Forms.Button btnCambiarCliente;
         private System.Windows.Forms.Button btnEditarDatos;
         private System.Windows.Forms.Button btnEditarServicios;
-        private System.Windows.Forms.Button btnVerPerfil;
+        
         private System.Windows.Forms.Label lblMenuTitulo;
         private System.Windows.Forms.Panel panelEstadisticas;
         private System.Windows.Forms.Label lblClientesAtendidos;

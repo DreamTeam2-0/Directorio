@@ -16,8 +16,8 @@ namespace LoginDirectorio.RegistroFases
             string passwordEncriptado = PasswordHelper.EncriptarPassword(datos.Password);
 
             // Preparar campos específicos
-            string tipoExperiencia = "";
-            string descripcionOtro = "";
+            //string tipoExperiencia = "";
+            //string descripcionOtro = "";
 
             // Preparar archivos si no se subieron títulos
             bool tieneTitulos = false;
