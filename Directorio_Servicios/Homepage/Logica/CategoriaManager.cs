@@ -1,4 +1,3 @@
-
 using Homepage.Modelos;
 using Homepage.UI;
 using MySql.Data.MySqlClient;
@@ -15,7 +14,7 @@ namespace Homepage.Logica
     {
         private FlowLayoutPanel _flpDenominaciones;
         private FlowLayoutPanel _flpServicios;
-        private TabControl _tabControl;
+        private Panel _panelCategorias;  // CAMBIADO: de TabControl a Panel
         private Label _lblDenominaciones;
         private Label _lblServicios;
         private Button _btnVolverHome;
@@ -28,12 +27,19 @@ namespace Homepage.Logica
         private List<Denominacion> _denominaciones = new List<Denominacion>();
         private List<Servicio> _servicios = new List<Servicio>();
 
-        public CategoriaManager(TabControl tabControl, FlowLayoutPanel flpDenominaciones,
-                                       FlowLayoutPanel flpServicios, Label lblDenominaciones,
-                                       Label lblServicios, Button btnVolverHome,
-                                       FranjaManager franjaManager, TextBox txtBuscar, Button btnBuscar, Label lblBienvenida)
+        public CategoriaManager(
+            Panel panelCategorias,  // CAMBIADO: ahora recibe Panel en lugar de TabControl
+            FlowLayoutPanel flpDenominaciones,
+            FlowLayoutPanel flpServicios,
+            Label lblDenominaciones,
+            Label lblServicios,
+            Button btnVolverHome,
+            FranjaManager franjaManager,
+            TextBox txtBuscar,
+            Button btnBuscar,
+            Label lblBienvenida)
         {
-            _tabControl = tabControl;
+            _panelCategorias = panelCategorias;  // CORREGIDO: ahora existe
             _flpDenominaciones = flpDenominaciones;
             _flpServicios = flpServicios;
             _lblDenominaciones = lblDenominaciones;
@@ -47,6 +53,7 @@ namespace Homepage.Logica
             ConfigurarEventos();
         }
 
+
         private void ConfigurarEventos()
         {
             _btnVolverHome.Click += (s, e) => VolverAHome();
@@ -57,11 +64,14 @@ namespace Homepage.Logica
         {
             _categoriaActual = categoria;
 
-            // Cambiar a la pestaña de categorías
-            _tabControl.SelectedTab = _tabControl.TabPages[1];
+            // Mostrar el panel de categorías
+            _panelCategorias.Visible = true;
 
-            // Actualizar título
+            // Actualizar título - MOSTRAR NOMBRE DE CATEGORÍA
             _lblDenominaciones.Text = $"Denominaciones - {categoria.Nombre}";
+
+            // Actualizar el otro label para mostrar la categoría seleccionada
+            _lblServicios.Text = $"Categoría seleccionada: {categoria.Nombre}";
 
             // Configurar buscador para esta categoría
             _txtBuscarCategoria.Text = "BUSCAR SERVICIOS";
@@ -72,22 +82,24 @@ namespace Homepage.Logica
             CargarServicios(categoria.Id);
         }
 
+        // Modifica el método MostrarTodasCategorias:
         public void MostrarTodasCategorias()
         {
-            // Cambiar a la pestaña de categorías
-            _tabControl.SelectedTab = _tabControl.TabPages[1];
+            // Mostrar el panel de categorías
+            _panelCategorias.Visible = true;
 
             // Configurar para mostrar todas las categorías
             _lblDenominaciones.Text = "Todas las Categorías";
-            _lblServicios.Text = "Seleccione una categoría";
+            _lblServicios.Text = "Seleccione una categoría del carrusel para ver sus denominaciones y servicios";
 
-            // Limpiar y mostrar mensaje
+            // Limpiar controles
             _flpDenominaciones.Controls.Clear();
             _flpServicios.Controls.Clear();
 
+            // Mostrar mensaje informativo
             var lbl = new Label
             {
-                Text = "Seleccione una categoría del carrusel para ver sus denominaciones y servicios",
+                Text = "Seleccione una categoría del carrusel en Home para ver sus denominaciones y servicios",
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic),
                 ForeColor = Color.Gray,
                 Size = new Size(500, 60)
@@ -97,6 +109,9 @@ namespace Homepage.Logica
             // Configurar buscador para búsqueda general
             _txtBuscarCategoria.Text = "BUSCAR SERVICIOS";
             _txtBuscarCategoria.ForeColor = Color.Gray;
+
+            // Limpiar categoría actual
+            _categoriaActual = null;
         }
 
         private void CargarDenominaciones(int idCategoria)
@@ -231,32 +246,45 @@ namespace Homepage.Logica
             {
                 Text = denominacion.Nombre,
                 Size = new Size(180, 60),
-                BackColor = Color.LightBlue,
-                ForeColor = Color.Black,
+                BackColor = Color.FromArgb(76, 175, 80), // Verde consistente
+                ForeColor = Color.White,
                 Font = new Font("Segoe UI", 10F, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
+                FlatAppearance = { BorderSize = 0 },
                 Margin = new Padding(5),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Tag = denominacion
             };
 
+            // Efecto hover
+            btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(56, 155, 60);
+            btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(76, 175, 80);
+
             btn.Click += (s, e) =>
             {
                 var den = (Denominacion)btn.Tag;
                 IncrementarVisitasDenominacion(den.Id);
-                CrearBoton.MostrarInfo($"Denominación: {den.Nombre}\nVisitas: {den.Visitas + 1}");
+
+                // Mostrar información de la denominación
+                string mensaje = $"Denominación: {den.Nombre}\n";
+                if (!string.IsNullOrEmpty(den.Descripcion))
+                    mensaje += $"Descripción: {den.Descripcion}\n";
+                mensaje += $"Visitas: {den.Visitas + 1}";
+
+                CrearBoton.MostrarInfo(mensaje);
             };
 
             return btn;
         }
 
-        private Panel CrearPanelServicio(Servicio servicio)
+        private GroupBox CrearPanelServicio(Servicio servicio)
         {
-            var panel = new Panel
+            var groupBox = new GroupBox
             {
-                Size = new Size(350, 100),
+                Size = new Size(350, 120),
                 BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle,
+                ForeColor = Color.Gray, // Color del texto del borde
+                Text = "", // Sin texto en el borde
                 Margin = new Padding(5),
                 Tag = servicio
             };
@@ -266,9 +294,9 @@ namespace Homepage.Logica
             {
                 Text = servicio.Titulo,
                 Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold),
-                Location = new Point(10, 10),
+                Location = new Point(10, 15),
                 Size = new Size(330, 20),
-                ForeColor = Color.DarkBlue
+                ForeColor = Color.FromArgb(32, 74, 135)
             };
 
             // Proveedor
@@ -276,22 +304,22 @@ namespace Homepage.Logica
             {
                 Text = $"Proveedor: {servicio.Proveedor}",
                 Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular),
-                Location = new Point(10, 35),
+                Location = new Point(10, 40),
                 Size = new Size(330, 15),
                 ForeColor = Color.DarkGray
             };
 
             // Descripción (truncada)
-            var descripcion = servicio.Descripcion.Length > 80
-                ? servicio.Descripcion.Substring(0, 80) + "..."
+            var descripcion = servicio.Descripcion.Length > 100
+                ? servicio.Descripcion.Substring(0, 100) + "..."
                 : servicio.Descripcion;
 
             var lblDescripcion = new Label
             {
                 Text = descripcion,
                 Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular),
-                Location = new Point(10, 55),
-                Size = new Size(330, 30),
+                Location = new Point(10, 60),
+                Size = new Size(330, 40),
                 ForeColor = Color.Black
             };
 
@@ -300,24 +328,34 @@ namespace Homepage.Logica
             {
                 Text = $"{servicio.Visitas} visitas",
                 Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Italic),
-                Location = new Point(10, 80),
+                Location = new Point(10, 100),
                 Size = new Size(100, 15),
                 ForeColor = Color.Gray
             };
 
-            panel.Controls.Add(lblTitulo);
-            panel.Controls.Add(lblProveedor);
-            panel.Controls.Add(lblDescripcion);
-            panel.Controls.Add(lblVisitas);
+            groupBox.Controls.Add(lblTitulo);
+            groupBox.Controls.Add(lblProveedor);
+            groupBox.Controls.Add(lblDescripcion);
+            groupBox.Controls.Add(lblVisitas);
 
-            panel.Click += (s, e) =>
+            // Efecto hover
+            groupBox.MouseEnter += (s, e) => groupBox.BackColor = Color.FromArgb(245, 245, 245);
+            groupBox.MouseLeave += (s, e) => groupBox.BackColor = Color.White;
+
+            groupBox.Click += (s, e) =>
             {
-                var serv = (Servicio)panel.Tag;
+                var serv = (Servicio)groupBox.Tag;
                 IncrementarVisitasServicio(serv.Id);
-                CrearBoton.MostrarInfo($"Servicio: {serv.Titulo}\nProveedor: {serv.Proveedor}");
+
+                string mensaje = $"Servicio: {serv.Titulo}\n" +
+                                $"Proveedor: {serv.Proveedor}\n" +
+                                $"Usuario: {serv.Username}\n" +
+                                $"Visitas: {serv.Visitas + 1}";
+
+                CrearBoton.MostrarInfo(mensaje);
             };
 
-            return panel;
+            return groupBox;
         }
 
         private void IncrementarVisitasDenominacion(int idDenominacion)
@@ -368,9 +406,9 @@ namespace Homepage.Logica
 
             // Filtrar servicios por texto
             var serviciosFiltrados = _servicios
-                .Where(s => s.Titulo.Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase) ||
-                           s.Descripcion.Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase) ||
-                           s.Proveedor.Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.Titulo.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                           s.Descripcion.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                           s.Proveedor.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0)
                 .ToList();
 
             // Actualizar la vista
@@ -403,10 +441,25 @@ namespace Homepage.Logica
 
         public void VolverAHome()
         {
-            _tabControl.SelectedTab = _tabControl.TabPages[0];
+            // Ocultar el panel de categorías
+            _panelCategorias.Visible = false;
+
+            // Limpiar la vista
+            LimpiarVista();
+
             // Restaurar el buscador original
             _txtBuscarCategoria.Text = "BUSCAR CATEGORÍAS";
             _txtBuscarCategoria.ForeColor = Color.Gray;
+        }
+
+
+        public void LimpiarVista()
+        {
+            _flpDenominaciones.Controls.Clear();
+            _flpServicios.Controls.Clear();
+            _lblDenominaciones.Text = "Todas las Categorías";
+            _lblServicios.Text = "Seleccione una categoría del carrusel para ver sus denominaciones y servicios";
+            _categoriaActual = null;
         }
     }
 

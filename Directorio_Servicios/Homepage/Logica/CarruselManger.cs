@@ -58,7 +58,7 @@ namespace Homepage.Logica
             }
         }
 
-        public void InicializarCarrusel()
+        public List<Button> InicializarCarrusel()
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Homepage.Logica
                 if (!_todasLasCategorias.Any())
                 {
                     MostrarMensajeSinCategorias();
-                    return;
+                    return new List<Button>();
                 }
 
                 // Configurar FlowLayoutPanel para 7 botones en línea
@@ -95,10 +95,12 @@ namespace Homepage.Logica
                 }
 
                 ActualizarInfoCarrusel();
+                return _botonesCategorias; // Devolver la lista de botones
             }
             catch (Exception ex)
             {
                 CrearBoton.MostrarError($"Error al inicializar carrusel: {ex.Message}");
+                return new List<Button>();
             }
         }
 
@@ -121,23 +123,7 @@ namespace Homepage.Logica
         {
             var btn = CrearBoton.CrearBotonCategoria(categoria.Nombre, categoria.ColorFondo);
             btn.Tag = categoria;
-            btn.Click += (s, e) =>
-            {
-                var cat = (Categoria)((Button)s).Tag;
-                try
-                {
-                    // Incrementa visitas en BD cuando se hace clic
-                    IncrementarVisitasCategoria(cat.Id);
 
-                    // Actualizar la lista de categorías más solicitadas
-                    CargarCategoriasMasSolicitadas();
-                }
-                catch (Exception ex)
-                {
-                    CrearBoton.MostrarError($"Error al registrar visita: {ex.Message}");
-                }
-                CrearBoton.MostrarInfo($"Seleccionaste: {cat.Nombre}");
-            };
             return btn;
         }
 
