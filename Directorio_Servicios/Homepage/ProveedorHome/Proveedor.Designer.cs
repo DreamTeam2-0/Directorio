@@ -77,7 +77,7 @@
             this.panelLateral.Controls.Add(this.btnCambiarCliente);
             this.panelLateral.Controls.Add(this.btnEditarDatos);
             this.panelLateral.Controls.Add(this.btnEditarServicios);
-            this.panelLateral.Controls.Add(this.btnVerPerfil);
+            //this.panelLateral.Controls.Add(this.btnVerPerfil);
             this.panelLateral.Controls.Add(this.lblMenuTitulo);
             this.panelLateral.Location = new System.Drawing.Point(0, 29);
             this.panelLateral.Name = "panelLateral";
@@ -318,7 +318,7 @@
         private System.Windows.Forms.Button btnCambiarCliente;
         private System.Windows.Forms.Button btnEditarDatos;
         private System.Windows.Forms.Button btnEditarServicios;
-        private System.Windows.Forms.Button btnVerPerfil;
+        
         private System.Windows.Forms.Label lblMenuTitulo;
         private System.Windows.Forms.Panel panelEstadisticas;
         private System.Windows.Forms.Label lblClientesAtendidos;

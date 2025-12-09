@@ -344,15 +344,19 @@ namespace Homepage.Logica
 
             groupBox.Click += (s, e) =>
             {
-                var serv = (Servicio)groupBox.Tag;
-                IncrementarVisitasServicio(serv.Id);
+                try
+                {
+                    var serv = (Servicio)groupBox.Tag;
+                    System.Diagnostics.Debug.WriteLine($"Clic en servicio ID: {serv.Id}, Título: {serv.Titulo}");
 
-                string mensaje = $"Servicio: {serv.Titulo}\n" +
-                                $"Proveedor: {serv.Proveedor}\n" +
-                                $"Usuario: {serv.Username}\n" +
-                                $"Visitas: {serv.Visitas + 1}";
-
-                CrearBoton.MostrarInfo(mensaje);
+                    // Abrir la nueva ventana emergente con los detalles
+                    AbrirDetalleServicio(serv.Id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir detalles: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             };
 
             return groupBox;
@@ -461,7 +465,26 @@ namespace Homepage.Logica
             _lblServicios.Text = "Seleccione una categoría del carrusel para ver sus denominaciones y servicios";
             _categoriaActual = null;
         }
+
+        private void AbrirDetalleServicio(int idServicio)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine($"Abriendo DetalleServicioForm para ID: {idServicio}");
+                var detalleForm = new DetalleServicioForm(idServicio);
+                detalleForm.ShowDialog(); // Modal - bloquea la ventana principal
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error en AbrirDetalleServicio: {ex.Message}\n{ex.StackTrace}");
+                MessageBox.Show($"Error al abrir detalles del servicio: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
+
+
 
     // Clases auxiliares
     public class Denominacion
