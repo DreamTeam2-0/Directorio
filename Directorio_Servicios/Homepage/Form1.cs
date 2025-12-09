@@ -1,12 +1,13 @@
-﻿using MySql.Data.MySqlClient;
-using DataBase;
+﻿using DataBase;
 using Homepage.Logica;
 using Homepage.Modelos;
 using Homepage.UI;
-using Shared.Session;
+using MySql.Data.MySqlClient;
 using Perfil;
+using Shared.Session;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Homepage
@@ -33,7 +34,7 @@ namespace Homepage
 
             // Inicializar el manager de sección de categorías - USA CategoriaManager
             _categoriaManager = new CategoriaManager(
-                tabControlPrincipal,
+                panelContenidoCategorias,
                 flpDenominaciones,
                 flpServicios,
                 lblDenominaciones,
@@ -44,6 +45,7 @@ namespace Homepage
                 btnBuscar,
                 lblBienvenida
             );
+
 
             // Configurar eventos
             this.Load += Form1_Load;
@@ -90,10 +92,13 @@ namespace Homepage
             // Configurar buscador
             _buscadorManager.ConfigurarBuscador();
 
-            // Cargar categorías
+            // Cargar categorías e inicializar carrusel
             _carruselManager.CargarCategorias();
-            _carruselManager.InicializarCarrusel();
+            _carruselManager.RestablecerCarrusel();
             _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+            // **CONFIGURAR EVENTOS DE CATEGORÍAS**
+            ConfigurarEventosCategorias();
 
             // Cargar categorías más solicitadas
             _carruselManager.CargarCategoriasMasSolicitadas();
@@ -101,15 +106,27 @@ namespace Homepage
 
         private void ConfigurarEventosCategorias()
         {
+            Console.WriteLine("Configurando eventos de categorías...");
+
             // Configurar eventos de los botones del carrusel
             foreach (Control control in flpCategorias.Controls)
             {
                 if (control is Button btn && btn.Tag is Categoria categoria)
                 {
-                    btn.Click -= BtnCategoria_Click; // Remover si ya existe
+                    Console.WriteLine($"Procesando botón: {categoria.Nombre}");
+
+                    // Remover eventos anteriores si existen
+                    btn.Click -= BtnCategoria_Click;
+
+                    // Asignar nuevo evento
                     btn.Click += BtnCategoria_Click;
+
+                    Console.WriteLine($"  - Evento asignado para: {categoria.Nombre}");
                 }
             }
+
+            // Verificar que todos los botones tienen eventos
+            VerificarEventosBotones();
         }
 
         private void BtnCategoria_Click(object sender, EventArgs e)
@@ -119,20 +136,32 @@ namespace Homepage
             {
                 try
                 {
-                    // Incrementar visitas en BD
+                    // 1. Incrementar visitas en BD
                     IncrementarVisitasCategoria(categoria.Id);
 
-                    // Actualizar la lista de categorías más solicitadas
+                    // 2. Actualizar la lista de categorías más solicitadas
                     _carruselManager.CargarCategoriasMasSolicitadas();
 
-                    // Mostrar la sección de categorías
-                    _categoriaManager.MostrarSeccionCategoria(categoria);
+                    // 3. Ir directamente a la sección de categorías
+                    // Ocultar controles de Home
+                    lblCategorias.Visible = false;
+                    flpCategorias.Visible = false;
+                    btnAnterior.Visible = false;
+                    btnSiguiente.Visible = false;
+                    lblPagina.Visible = false;
+                    lblRango.Visible = false;
+                    lblSolicitados.Visible = false;
+                    tlpSolicitados.Visible = false;
 
-                    CrearBoton.MostrarInfo($"Seleccionaste: {categoria.Nombre}");
+                    // Mostrar panel de categorías
+                    panelContenidoCategorias.Visible = true;
+
+                    // 4. Mostrar la categoría específica en CategoriaManager
+                    _categoriaManager.MostrarSeccionCategoria(categoria);
                 }
                 catch (Exception ex)
                 {
-                    CrearBoton.MostrarError($"Error al registrar visita: {ex.Message}");
+                    CrearBoton.MostrarError($"Error: {ex.Message}");
                 }
             }
         }
@@ -159,10 +188,44 @@ namespace Homepage
             }
         }
 
+        private void MenuItemHome_Click(object sender, EventArgs e)
+        {
+            if (!UserSession.SesionActiva)
+            {
+                MessageBox.Show("La sesión ha expirado.", "Sesión Expirada",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
+            // Ocultar el panel de categorías
+            panelContenidoCategorias.Visible = false;
+
+            // Mostrar controles de Home
+            MostrarControlesHome();
+
+            // Limpiar la vista del CategoriaManager
+            _categoriaManager.LimpiarVista();
+
+            // Actualizar el carrusel si es necesario
+            if (!_carruselManager.ModoBusqueda)
+            {
+                _carruselManager.CargarCategorias();
+                _carruselManager.RestablecerCarrusel();
+                _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+                // **IMPORTANTE**: Configurar eventos después de actualizar el carrusel
+                ConfigurarEventosCategorias();
+
+                _carruselManager.CargarCategoriasMasSolicitadas();
+            }
+        }
+
+
         private void RealizarBusqueda()
         {
-            // Verificar en qué pestaña estamos
-            if (tabControlPrincipal.SelectedTab == tabPageHome)
+            // Verificar si estamos en Home o en la vista de categorías
+            if (!panelContenidoCategorias.Visible)
             {
                 // Búsqueda en el home
                 if (txtBuscar.Text == "BUSCAR CATEGORÍAS" || string.IsNullOrWhiteSpace(txtBuscar.Text))
@@ -171,6 +234,10 @@ namespace Homepage
                     _carruselManager.CargarCategorias();
                     _carruselManager.RestablecerCarrusel();
                     _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+                    // **IMPORTANTE**: Reconfigurar eventos
+                    ConfigurarEventosCategorias();
+
                     _carruselManager.CargarCategoriasMasSolicitadas();
                     return;
                 }
@@ -178,12 +245,21 @@ namespace Homepage
                 var textoBusqueda = txtBuscar.Text.Trim();
                 _carruselManager.BuscarCategorias(textoBusqueda, txtBuscar);
                 _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+                // **IMPORTANTE**: Reconfigurar eventos después de la búsqueda
+                ConfigurarEventosCategorias();
             }
-            else if (tabControlPrincipal.SelectedTab == tabPageCategorias)
+            else
             {
-                // El buscador en la pestaña de categorías es manejado por CategoriaManager
+                // El buscador en la vista de categorías es manejado por CategoriaManager
                 // No hacemos nada aquí, ya que el manager lo maneja
             }
+        }
+
+        private void ActualizarEventosCarrusel()
+        {
+            // Llamar a ConfigurarEventosCategorias cada vez que el carrusel cambie
+            ConfigurarEventosCategorias();
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -194,11 +270,15 @@ namespace Homepage
         private void BtnAnterior_Click(object sender, EventArgs e)
         {
             _carruselManager.MoverAnterior();
+            // Reconfigurar eventos después de mover el carrusel
+            ActualizarEventosCarrusel();
         }
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
             _carruselManager.MoverSiguiente();
+            // Reconfigurar eventos después de mover el carrusel
+            ActualizarEventosCarrusel();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -395,13 +475,48 @@ namespace Homepage
                 return;
             }
 
-            // Mostrar la pestaña de categorías con vista general
+            // Ocultar controles de Home
+            lblCategorias.Visible = false;
+            flpCategorias.Visible = false;
+            btnAnterior.Visible = false;
+            btnSiguiente.Visible = false;
+            lblPagina.Visible = false;
+            lblRango.Visible = false;
+            lblSolicitados.Visible = false;
+            tlpSolicitados.Visible = false;
+
+            // Mostrar panel de categorías
+            panelContenidoCategorias.Visible = true;
+
+            // Mostrar TODAS las categorías (vista general)
             _categoriaManager.MostrarTodasCategorias();
         }
 
+
+
         private void btnVolverHome_Click(object sender, EventArgs e)
         {
-            _categoriaManager.VolverAHome();
+            // Ocultar el panel de categorías
+            panelContenidoCategorias.Visible = false;
+
+            // Mostrar controles de Home
+            MostrarControlesHome();
+
+            // Limpiar la vista del CategoriaManager
+            _categoriaManager.LimpiarVista();
+
+            // Actualizar el carrusel si es necesario
+            if (!_carruselManager.ModoBusqueda)
+            {
+                _carruselManager.CargarCategorias();
+                _carruselManager.RestablecerCarrusel();
+                _carruselManager.ActualizarBotonesNavegacion(btnAnterior, btnSiguiente);
+
+                // **IMPORTANTE**: Reconfigurar eventos
+                ConfigurarEventosCategorias();
+
+                _carruselManager.CargarCategoriasMasSolicitadas();
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -415,5 +530,61 @@ namespace Homepage
                 BtnSiguiente_Click(sender, e);
             }
         }
+
+        private void VerificarEventosBotones()
+        {
+            int botonesConEvento = 0;
+            int botonesSinEvento = 0;
+
+            foreach (Control control in flpCategorias.Controls)
+            {
+                if (control is Button btn)
+                {
+                    // Verificar si el botón tiene el evento asignado
+                    var eventHandler = btn.GetType().GetEvent("Click").GetRaiseMethod();
+
+                    if (btn.Tag is Categoria categoria)
+                    {
+                        if (eventHandler != null)
+                        {
+                            botonesConEvento++;
+                            Console.WriteLine($"✓ Botón '{categoria.Nombre}' tiene evento");
+                        }
+                        else
+                        {
+                            botonesSinEvento++;
+                            Console.WriteLine($"✗ Botón '{categoria.Nombre}' NO tiene evento");
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine($"Resumen: {botonesConEvento} con evento, {botonesSinEvento} sin evento");
+        }
+
+        private void OcultarControlesHome()
+        {
+            lblCategorias.Visible = false;
+            flpCategorias.Visible = false;
+            btnAnterior.Visible = false;
+            btnSiguiente.Visible = false;
+            lblPagina.Visible = false;
+            lblRango.Visible = false;
+            lblSolicitados.Visible = false;
+            tlpSolicitados.Visible = false;
+        }
+
+        private void MostrarControlesHome()
+        {
+            lblCategorias.Visible = true;
+            flpCategorias.Visible = true;
+            btnAnterior.Visible = true;
+            btnSiguiente.Visible = true;
+            lblPagina.Visible = true;
+            lblRango.Visible = true;
+            lblSolicitados.Visible = true;
+            tlpSolicitados.Visible = true;
+        }
     }
+
 }
