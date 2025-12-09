@@ -175,25 +175,33 @@ namespace LoginDirectorio
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea registrarse como Cliente o como Proveedor de servicios?",
-                                                  "Tipo de Registro",
-                                                  MessageBoxButtons.YesNoCancel,
-                                                  MessageBoxIcon.Question,
-                                                  MessageBoxDefaultButton.Button1);
+            using (var formSeleccion = new SeleccionRegistroForm())
+            {
+                var result = formSeleccion.ShowDialog();
 
-            if (result == DialogResult.Yes) // Sí = Cliente
-            {
-                RegistroForm formularioRegistro = new RegistroForm();
-                formularioRegistro.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    switch (formSeleccion.TipoSeleccionado)
+                    {
+                        case SeleccionRegistroForm.TipoRegistro.Cliente:
+                            RegistroForm formularioRegistro = new RegistroForm();
+                            formularioRegistro.ShowDialog();
+                            break;
+
+                        case SeleccionRegistroForm.TipoRegistro.Proveedor:
+                            this.Hide();
+                            var formularioProveedor = new RegistroProveedorForm();
+                            formularioProveedor.FormClosed += (s, args) => this.Show();
+                            formularioProveedor.Show();
+                            break;
+
+                        case SeleccionRegistroForm.TipoRegistro.Ninguno:
+                        default:
+                            // No hacer nada
+                            break;
+                    }
+                }
             }
-            else if (result == DialogResult.No) // No = Proveedor
-            {
-                this.Hide();
-                var formularioProveedor = new RegistroProveedorForm();
-                formularioProveedor.FormClosed += (s, args) => this.Show();
-                formularioProveedor.Show();
-            }
-            // Si es Cancel, no hace nada
         }
     }
 }
