@@ -36,9 +36,6 @@ namespace CRUD_Directorio.CRUD
         {
             InitializeComponent();
 
-            // Depuración: mostrar posiciones
-            MessageBox.Show($"Botón Nuevo: {btnNuevo.Location}, Visible: {btnNuevo.Visible}");
-            MessageBox.Show($"Panel Formulario: {panelFormulario.Location}, Visible: {panelFormulario.Visible}");
 
             // Forzar visibilidad y posición
             btnNuevo.Visible = true;
@@ -816,4 +813,5 @@ namespace CRUD_Directorio.CRUD
         
         
     }
+
 }
